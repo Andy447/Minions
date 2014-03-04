@@ -7,21 +7,20 @@
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
-  -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
+  height: 100%;
+  margin: 0;
 }
 body {
-  margin: 0;
+	height: 100%;
+   margin: 0;
 }
 
 #Page_content{
-	border-style:solid;
-	border-width:5px;
 	display:block;
     width:100%;
-    height:630px;
-    background-color:#FFFF33;
-    overflow:scroll;
+    height:100%; 
+	border-style:solid;
+	border-color:black;
 }
 article,
 aside,
@@ -286,7 +285,7 @@ html {
    position:absolute;
    bottom:0;
    width:100%;
-   height:60px;   /* Height of the footer */
+   height:30px;   /* Height of the footer */
    background:#6cf;
 }
 body {
@@ -296,6 +295,63 @@ body {
   color: #333;
   background-color: #fff;
 }
+/* #tabs ul {
+padding: 0px;
+margin: 0px;
+margin-left: 10px;
+list-style-type: none;
+}
+
+#tabs ul li {
+display: inline-block;
+clear: none;
+float: left;
+height: 24px;
+}
+
+#tabs ul li a {
+position: relative;
+margin-top: 16px;
+display: block;
+margin-left: 6px;
+line-height: 24px;
+padding-left: 10px;
+background: #f6f6f6;
+z-index: 9999;
+border: 1px solid #ccc;
+border-bottom: 0px;
+
+/* The following four lines are to make the top left and top right corners of each tab rounded. */
+-moz-border-radius-topleft: 4px;
+border-top-left-radius: 4px;
+-moz-border-radius-topright: 4px;
+border-top-right-radius: 4px;
+/* end of rounded borders */
+/* 
+width: 130px;
+color: #000000;
+text-decoration: none;
+font-weight: bold;
+}
+
+#Tabs ul li a:hover {
+text-decoration: underline; // a very simple effect when hovering the mouse on tab
+}
+
+#tabs #Content_Area{ 
+padding: 0 15px;
+clear:both;
+overflow:hidden;
+line-height:19px;
+position: relative;
+top: 20px;
+z-index: 5;
+height: 150px;
+overflow: hidden;
+}
+
+p { padding-left: 15px; } */
+
 input,
 button,
 select,
@@ -773,10 +829,8 @@ pre code {
   }
 }
 .container-fluid {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+    background-image:url(header.jpg);
+    background-size: 100% 100%;
 }
 .row {
   margin-right: -15px;
@@ -3477,16 +3531,43 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li > a {
   position: relative;
   display: block;
-  padding: 10px 15px;
+  padding: 10px 10px;
 }
+
+.nav2 > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 10px;
+  border-style:solid;
+  background-color: #33FF33;
+  font-weight:bold;
+}
+.nav2 {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
   background-color: #eee;
 }
+
+.nav2> li > a:hover,
+.nav2 > li > a:focus {
+  text-decoration: none;
+  background-color: #eee;
+}
+
 .nav > li.disabled > a {
   color: #999;
 }
+
+.nav2 > li.disabled > a {
+  color: #999;
+}
+
 .nav > li.disabled > a:hover,
 .nav > li.disabled > a:focus {
   color: #999;

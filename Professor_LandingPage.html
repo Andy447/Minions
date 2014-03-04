@@ -10,7 +10,7 @@
     <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
 </head>
 <body>
-      <div class="container-fluid" style="background-color:#000000; width:100%">
+      <div class="container-fluid" style="width:100%; height:75px;">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
@@ -18,9 +18,9 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><font size="6">Professor View</font></a>
+          <a class="navbar-brand" href="#"><font size="6"><b>Professor View</b></font></a>
         </div>
-        <div class="navbar-collapse collapse" style="background-color:#000000; width:100%">
+        <div class="navbar-collapse collapse" style="background-image: url(wallpaper.jpg); width:100%">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Settings</a></li>
             <li><a href="#">Profile</a></li>
@@ -28,9 +28,10 @@
           </ul>
         </div>
       </div>
+	  <div style="height:5px; width:100%; background-color:#FFFFFF;"></div>
 	  <div id = "page_container" style=" width:100%" align="center">
-      <div style="float:left; width:10%; height:630px; background-color:#3300CC;" >
-          <ul class="nav nav-sidebar">
+      <div style="float:left; width:10.5%; height:300px; background-color:#FFFF;" >
+          <ul class="nav2 nav-sidebar">
             <li class="active"><a href="#">Calendar</a></li>
             <li><a href="#">Assignment</a></li>
             <li><a href="#">Exams</a></li>
@@ -38,12 +39,44 @@
 			<li><a href="#">Events</a></li>
           </ul>
         </div>
-			   <div id = "Page_content" style="float:right; width:90%;">
-          <h1>CPSC 110</h1>
-		  </div>
+		
+			   <div id = "Page_content" style="float:left; width:89.5%; height:630px;">
+		  <h1><select>
+  <option value="CPSC 310">CPSC 310</option>
+  <option value="CPSC 320">CPSC 320</option>
+  <option value="CPSC 304">CPSC 304</option>
+  <option value="CPSC 344">CPSC 344</option>
+   </select></h1>
+ <!--   <div id=”Tabs”>
+<ul>
+<li id=”li_tab1″ onclick=”tab(‘tab1′)” ><a>Tab 1</a></li>
+<li id=”li_tab2″ onclick=”tab(‘tab2′)”><a>Tab 2</a></li>
+</ul>
+<div id=”Content_Area”>
+<div id=”tab1″>
+<p>This is the text for tab 1</p>
+</div>
+
+<div id=”tab2″ style=”display:none;”>
+<p>This is the text for tab 2.</p>
+</div>
+</div> 
+</div> 
+   </div>
+		-->
 </div>
 
 <div id="footer_2" style="background-color:#000000;clear:both;text-align:center;"><font color="white">
 Copyright TeamMinions.com</font></div>
 </body>
 </html>
+<script type=”text/javascript”>
+function tab(tab) {
+document.getElementById(‘tab1′).style.display = ‘none’;
+document.getElementById(‘tab2′).style.display = ‘none’;
+document.getElementById(‘li_tab1′).setAttribute(“class”, “”);
+document.getElementById(‘li_tab2′).setAttribute(“class”, “”);
+document.getElementById(tab).style.display = ‘block’;
+document.getElementById(‘li_’+tab).setAttribute(“class”, “active”);
+}
+</script>
