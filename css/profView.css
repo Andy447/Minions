@@ -366,6 +366,7 @@ textarea {
 a {
   color: #FFFFFF;
   text-decoration: none;
+
 }
 a:hover,
 a:focus {
@@ -5883,6 +5884,10 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+}
+
+#active2 {
+ color:blue;
 }
 
 ul.tabs {
