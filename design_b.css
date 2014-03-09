@@ -1,29 +1,100 @@
+
+/*---------------------------------------------------------------------
+Calendar configurations
+-----------------------------------------------------------------------*/
+.calendar-widget, .content {
+	box-shadow: 5px 5px 10px #7D7D7D;
+	border: 1px solid #C7C7C7;
+	margin-top:10px;
+	margin-bottom:10px;
+	padding: 5px;
+	border-radius: 5px;
+}
+
 .calendar-controls {
 	width:84px;
 	margin:auto;
 }
 
 .calendar-container {
-	width: 99%;
+	width: 100%;
     overflow: auto;
     height: 450px;
     white-space:nowrap;
 }
 
 .calendar {
-	margin-left:20px;
-	margin-right:20px;
-	border: 1px solid black;
+	margin-left:15px;
+	margin-right:15px;
 	display:inline-block;
-	width:520px;
+	width:540px;
 }
 
-.legend-midterms {
-	margin-top:15px;
+.fc-day-content:hover{
+	cursor: pointer;
+}
+/*---------------------------------------------------------------------
+Calendar legend configurations
+-----------------------------------------------------------------------*/
+
+.legend-item {
+	display:inline-block;
+}
+
+.legend-generic {
+	margin-bottom:10px;
+	text-align: center;
+	width: 100px;
+	background-color:#666666;
+	color:white;
+	border-radius: 5px;
+	border: 1px solid #C7C7C7;
+}
+.legend-midterms, .legend-assignments, .legend-labs, .legend-events{
+	margin-bottom:5px;
 	text-align: center;
 	color:white;
 	width: 100px;
+	border-radius: 5px;
+}
+
+.legend-midterms {
 	border: 1px solid #5254FF;
 	background-color: #5254FF;
-	border-radius: 10px;
+}
+
+.legend-assignments {
+	border: 1px solid #FA8A28;
+	background-color: #FA8A28;
+}
+
+.legend-labs {
+	border: 1px solid #9E42FF;
+	background-color: #9E42FF;	
+}
+
+.legend-events{
+	border: 1px solid #1BD12A;
+	background-color: #1BD12A;
+}
+
+.legend-warning {
+	font-weight:bold;
+}
+
+/*------------------------------------------------------------------------
+Tab pane customizations
+-------------------------------------------------------------------------*/
+.tab-pane {
+	padding-top:20px;
+}
+
+.table {
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+.edit-date{
+	font-size:20px;
+	cursor:pointer;
 }

@@ -1,43 +1,82 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" >
+<html xmlns='http://www.w3.org/1999/xhtml' >
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Professor Landing Page</title>
-    <link type="text/css" rel="StyleSheet" href="design_b.css">
-    <link type="text/css" rel="StyleSheet" href="bootstrap/css/bootstrap.css">
-    <link type="text/css" rel="StyleSheet" href="jquery.bxslider/jquery.bxslider.css">
-    <link type="text/css" rel="StyleSheet" href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <script type="text/javascript" src="jquery.bxslider/jquery.bxslider.js"></script>
-    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
-    <script type="text/javascript" src="design_b.js"></script>
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.min.js"></script>
+    <link type='text/css' rel='StyleSheet' href='design_b.css'>
+    <link type='text/css' rel='StyleSheet' href='bootstrap/css/bootstrap.css'>
+    <link type='text/css' rel='StyleSheet' href='jquery.bxslider/jquery.bxslider.css'>
+    <link type='text/css' rel='StyleSheet' href='http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.css'>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script>
+    <script type='text/javascript' src='jquery.bxslider/jquery.bxslider.js'></script>
+    <script type='text/javascript' src='bootstrap/js/bootstrap.js'></script>
+    <script type='text/javascript' src='design_b.js'></script>
+    <script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.min.js'></script>
 </head>
 <body>
+<nav class='navbar navbar-inverse' role='navigation'>
+  <div class='container-fluid'>
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class='navbar-header'>
+      <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#bs-example-navbar-collapse-1'>
+        <span class='sr-only'>Toggle navigation</span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <a class='navbar-brand' href='#'>Deadline Management System</a>
+    </div>
 
-<!--
-<div class='container'>
-	<div class='row'>
-		<div class='col-md-12'>
-		<div class ='sliderControls'>
-			<span id='slider-prev' class="glyphicon glyphicon-circle-arrow-left" style="font-size:40px;"></span>         <span id='slider-next' class="glyphicon glyphicon-circle-arrow-right" style="font-size:40px;"></span>
-		</div>
-		</div>
-	</div>
-</div>
--->
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
+      <ul class='nav navbar-nav navbar-right'>
+        <li><a href='#'>Profile</a></li>
+        <li><a href='#'>Settings</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 <div class='container'>
 	<div class='row'>
 		<div class='col-md-2'>
 			<h2>Calendar</h2>
 		</div>
-		<div class='col-md-1 legend-item'>
-		<div class='legend-midterms'>Midterms</div>
+	</div>
+	<div class='row'>
+		<div class='col-md-12'>
+			<div class='legend-item'>
+				<div class='legend-midterms'>Midterms</div>
+			</div>
+			<div class='legend-item'>
+				<div class='legend-assignments'>Assignments</div>
+			</div>
+			<div class='legend-item'>
+				<div class='legend-labs'>Labs</div>
+			</div>
+			<div class='legend-item'>
+				<div class='legend-events'>Events</div>
+			</div>
 		</div>
 	</div>
+	<div class='row'>
+		<div class='col-md-12'>
+			<div class='legend-item'>
+				<div class='legend-warning'>% of students with midterm time conflicts and/or assignment deadlines:</div>
+			</div>
+			<div class='legend-item'>
+				<div class='legend-generic'>! = 10% - 20%</div>
+			</div>
+			<div class='legend-item'>
+				<div class='legend-generic'>!! = 20% - 30%</div>
+			</div>
+			<div class='legend-item'>
+				<div class='legend-generic'>!!! > 30%</div> 
+			</div>
+		</div>
+	</div>	
 </div>
 
-<div class='container'>
+<div class='container calendar-widget'>
 	<div class='row'>
 		<div class='col-md-12'>
 			<div class='calendar-container'>
@@ -52,24 +91,56 @@
 			</div>
 		</div>
 	</div>
-</div>
-<div class='container'>
 	<div class='row'>
 		<div class='col-md-12'>
-		<div class ='calendar-controls'>
-			<span id='slider-left' class="glyphicon glyphicon-circle-arrow-left" style="font-size:40px;"></span>         <span id='slider-right' class="glyphicon glyphicon-circle-arrow-right" style="font-size:40px;"></span>
-		</div>
+			<div class ='calendar-controls'>
+				<span id='slider-left' class='glyphicon glyphicon-circle-arrow-left' style='font-size:36px;'></span> <span id='slider-right' class='glyphicon glyphicon-circle-arrow-right' style='font-size:36px;'></span>
+			</div>
 		</div>
 	</div>
+</div>
+<div class='container'>
+
 </div>
 <div class='container'>
 	<div class='row'>
 		<div class='col-md-12'>
 			<div class='content'>
-			hello
+				<ul class='nav nav-tabs' id='myTab'>
+				  <li class='active'><a href='#all' data-toggle='tab'>All</a></li>
+				  <li><a href='#midterms' data-toggle='tab'>Exams and Quizzes</a></li>
+				  <li><a href='#assignments' data-toggle='tab'>Assignments</a></li>
+				  <li><a href='#labs' data-toggle='tab'>Labs</a></li>
+				  <li><a href='#events' data-toggle='tab'>Events</a></li>
+				</ul>
+
+				<div class='tab-content'>
+				  <div class='tab-pane active' id='all'>hello</div>
+				  <div class='tab-pane' id='midterms'>
+				  	<button type='button' class='btn btn-primary'><span class='glyphicon glyphicon-plus'></span>Add new midterm</button>
+				  	<table class='table'>
+				  		<tr>
+				  			<th>Deliverable</th>
+				  			<th>% of Students with Conflicts</th>
+				  			<th>Time and Date</th>
+				  			<th>Change Date</th>
+				  		<tr>
+				  		<tr id='M1'>
+				  			<td><button class='btn btn-link'>Midterm 1</button></td>
+				  			<td>40%</td>
+				  			<td>11:00PM - Monday January 20th, 2014</td>
+				  			<td><span class='glyphicon glyphicon-edit edit-date'></td>
+				  		<tr>
+				  	</table>
+				  </div>
+				  <div class='tab-pane' id='assignments'>...</div>
+				  <div class='tab-pane' id='labs'>...</div>
+				  <div class='tab-pane' id='events'>...</div>
+				</div>
 			</div>
 		</div>
 	</div>	
 </div>
+
 </body>
 </html>
