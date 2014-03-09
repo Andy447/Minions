@@ -69,15 +69,36 @@ $(document).ready(function() {
           </ul>
         </div>
 		
-			   <div id = "Page_content" style="float:left; width:89%; height:900px;">
-			   <P><h2><b><u>Midterm 1</b></u></h2></P> 
+			   <div id = "Page_content" style="float:left; width:89%; height:630px;">
+		  <h2><select>
+  <option value="CPSC 310">CPSC 110</option>
+  <option value="CPSC 320">CPSC 320</option>
+  <option value="CPSC 304">CPSC 304</option>
+  <option value="CPSC 344">CPSC 344</option>
+   </select></h2>
 <!--    <div class="deck-screen-left">
 						<canvas id="canvas" height="200" width="400"></canvas>
 				<br>
 			</div>
 </div> -->
+  <h1>Exam Dates</h1>
 <div id="mytables">
 <table style="width:100%" align="center">
+<tr>
+  <td><form action="PV1_Exams-CreateNewItem.html">
+ <input type="submit" value="Create New Item"></form></td>
+   <td><b><u><font color="black"></font></u></b></td>
+    <td><b><u><font color="black"></font></u></b></td>
+	 <td><b><u><font color="black"></font></u></b></td>
+	  <td><b><u><font color="black"></font></u></b></td>
+</tr>
+<tr>
+ <td><font color="white">.</font></td>
+ <td><font color="white">.</font></td>
+   <td><font color="white">.</font></td>
+  <td><font color="white">.</font></td>
+ <td><font color="white">.</font></td>
+</tr>
 <tr>
   <td><b><u><font color="black">Item Name</font></u></b></td>
   <td><b><u><font color="black">% of Students with Conflicts</font></u></b></td>
@@ -87,46 +108,46 @@ $(document).ready(function() {
   </tr>
 <tr>
   <td><a href="PV1_Exams-M1Details.html"><b><font color="black">Midterm 1</font></b></a></td>
-  <td><span style="background-color:red"><font color="white">%40</font></span></td>		
-  <td>Jan 20 2014</td>
+  <td><span style="background-color:green"><font color="white">%3</font></span></td>		
+  <td>Jan 22 2014</td>
   <td>1:00 PM</td>
-<td><form action="PV1_Exams.html">
-    <input type="submit" value="Save Changes" onclick="alert('Success! You have updated the exam date!')"></form></td>
+  <td><form action="PV1_Exams-Midterm1.html">
+    <input type="submit" value="Change Item Date"></form></td>
+	<td><form action="PV1_Exams-Delete.html">
+    <input type="submit" value="X">
+</form></td>
   </tr>
-  <tr>
-<td><font color="white">.</font></td>
- <td><font color="white">.</font></td>
-</tr>
+   <tr>
+  <td><a href="#"><b><font color="black">Quiz #5</font></b></a></td>
+   <td><span style="background-color:Green"><font color="white">%0</font></span></td>		
+  <td>Feb 28 2014</td>
+  <td>1:00 PM</td>
+  <td><button type="button" onclick="alert('Success! You have updated the exam date!')">Change Item Date</button></td>
+   <td><button type="button" onclick="alert('Item Deleted')">X</button></td>
+  </tr>
+   <tr>
+  <td><a href="#"><b><font color="black">Quiz #6</font></b></a></td>
+   <td><span style="background-color:Green"><font color="white">%2</font></span></td>		
+  <td>Mar 16 2014</td>
+  <td>1:00 PM</td>
+  <td><button type="button" onclick="alert('Success! You have updated the exam date!')">Change Item Date</button></td>
+   <td><button type="button" onclick="alert('Item Deleted')">X</button></td>
+  </tr>
 </table>
 </div>
-<img src="./images/444graph.JPG" alt="info_text1" width = "95%" height = "50%">
-<table style="width:100%" align="center">
-<tr>
-<td><font color="white">.......</font></td>
-<td><form action="#"><input type="submit" value="&larr;" onclick="alert('Go to the week before')"></form></td>
-<td><form action="#"><input type="submit" value="Jan 19" onclick="alert('Changed Date of Miderm 1 to Jan 19th')"></form></td>
-<td><font color="white">..</font></td>
-<td><form action="PV1_Exams-Midterm1.html"><input type="submit" value="Jan 20" onclick="alert('Changed Date of Miderm 1 to Jan 20th')"></form></td>
-<td><font color="white">....</font></td>
-<td><form action="#"><input type="submit" value="Jan 21" onclick="alert('Changed Date of Miderm 1 to Jan 21st')"></form></td>
-<td><font color="white">...</font></td>
-<td><form action="PV1_Exams-Midterm1-changedto22.html"><input type="submit" value="Jan 22" onclick="alert('Changed Date of Miderm 1 to Jan 22nd')"></form></td>
-<td><font color="white">..</font></td>
-<td><form action="#"><input type="submit" value="Jan 23" onclick="alert('Changed Date of Miderm 1 to Jan 23rd')"></form></td>
-<td><font color="white">...</font></td>
-<td><form action="#"><input type="submit" value="Jan 24" onclick="alert('Changed Date of Miderm 1 to Jan 24th')"></form></td>
-<td><font color="white">..</font></td>
-<td><form action="#"><input type="submit" value="Jan 25" onclick="alert('Changed Date of Miderm 1 to Jan 25th')"></form></td>
-<td><form action="#"><input type="submit" value="&rarr;" onclick="alert('Go to the next week')"></form></td>
-  </tr>
-  <tr>
-<td><font color="white">.</font></td>
- <td><font color="white">.</font></td>
-</tr>
-</table>
 </div>
 
 <div id="footer_2" style="background-color:#000000;clear:both;text-align:center;"><font color="white">
 Copyright TeamMinions.com</font></div>
 </body>
 </html>
+<script type=”text/javascript”>
+function tab(tab) {
+document.getElementById(‘tab1′).style.display = ‘none’;
+document.getElementById(‘tab2′).style.display = ‘none’;
+document.getElementById(‘li_tab1′).setAttribute(“class”, “”);
+document.getElementById(‘li_tab2′).setAttribute(“class”, “”);
+document.getElementById(tab).style.display = ‘block’;
+document.getElementById(‘li_’+tab).setAttribute(“class”, “active”);
+}
+</script>
