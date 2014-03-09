@@ -70,34 +70,79 @@ $(document).ready(function() {
         </div>
 		
 			   <div id = "Page_content" style="float:left; width:89%; height:630px;">
-			   <P><h2><b><u>Midterm 1</b></u></h2></P> 
+		  <h2><select>
+  <option value="CPSC 310">CPSC 110</option>
+  <option value="CPSC 320">CPSC 320</option>
+  <option value="CPSC 304">CPSC 304</option>
+  <option value="CPSC 344">CPSC 344</option>
+   </select></h2>
 <!--    <div class="deck-screen-left">
 						<canvas id="canvas" height="200" width="400"></canvas>
 				<br>
 			</div>
 </div> -->
-<div id="mytables">
-<table style="width:100%" align="center">
+<table style="width:60%" align="center">
 <tr>
-  <td><b><u><font color="black">Item Name</font></u></b></td>
-  <td><b><u><font color="black">% of Students with Conflicts</font></u></b></td>
-  <td><b><u><font color="black">Date</font></u></b></td>
-  <td><b><u><font color="black">Time</font></u></b></td>
-  <td><b><u><font color="black"></font></u></b></td>
-  </tr>
+ <td><font color="white">.</font></td>
+ <td><font color="white">.</font></td>
+</tr>
 <tr>
-  <td><a href="PV1_Exams-M1Details.html"><b><font color="black">Midterm 1</font></b></a></td>
-  <td><span style="background-color:red"><font color="white">%40</font></span></td>		
-  <td>Jan 20 2014</td>
-  <td>1:00 PM</td>
-<td><form action="PV1_Home.html">
-    <input type="submit" value="Save Changes" onclick="alert('Success! You have updated the exam date!')"></form></td>
-  </tr>
+<td><div align="right">Item Name:</div></td> 
+<td><input type="text" name="Item Name"></td> 
+</tr>
+<tr>
+<td><font color="white">.</font></td>
+ <td><font color="white">.</font></td>
+</tr>
+<tr>
+<td><div align="right">Date:</div></td> 
+<td><input type="text" name="Date"></td> 
+</tr>
+<tr>
+<td><font color="white">.</font></td>
+ <td><font color="white">.</font></td>
+</tr>
+<tr>
+<td><div align="right">Time:</div></td> 
+<td><input type="text" name="Time"></td> 
+</tr>
+<tr>
+<td><font color="white">.</font></td>
+ <td><font color="white">.</font></td>
+</tr>
+<tr>
+<td><div align="right">Location:</div></td> 
+<td><input type="text" name="Location"></td> 
+</tr>
+<tr>
+<td><font color="white">.</font></td>
+ <td><font color="white">.</font></td>
+</tr>
+<tr>
+<td><div align="right">Material Covered:</div></td>
+<td><input type="text" name="Material Covered"></td>  
+</tr>
+<tr>
+<td><font color="white">.</font></td>
+ <td><font color="white">.</font></td>
+</tr>
+<tr>
+<td><div align="right">Comments:</div></td>
+<td><textarea rows="3" cols="40"></textarea></td>  
+</tr>
+<tr>
+<td><font color="white">.</font></td>
+ <td><font color="white">.</font></td>
+</tr>
 </table>
-</div>
+<form action="PV1_Exams-V2.html">
+    <input type="submit" value="Save Changes" onclick="alert('Success! You have created a new item!')"></form>
+
+
 </div>
 
 <div id="footer_2" style="background-color:#000000;clear:both;text-align:center;"><font color="white">
 Copyright TeamMinions.com</font></div>
 </body>
 </html>
+<script type=”text/javascript”>
