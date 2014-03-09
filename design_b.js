@@ -2,6 +2,7 @@ var months = new Array('January', 'February', 'March', 'April', 'May', 'June', '
 var monthDays = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
 var weekDay = new Array('Sun', 'Mon', 'Tue', 'Wed', 'Thurs', 'Fri', 'Sat');
 
+/*initiating the calendar widgets*/
 $(document).ready(function() {
 	$('#calendar-jan').fullCalendar({
 		year: 2014,
@@ -114,3 +115,73 @@ $(document).ready(function() {
 	})
 })
 
+/*pie chart initializations*/
+
+$(document).ready(function() {
+	$.elycharts.templates['pie_basic_1'] = {
+	 type : "pie",
+	 defaultSeries : {
+	  plotProps : {
+	   stroke : "white",
+	   "stroke-width" : 2,
+	   opacity : 0.9
+	  },
+	  highlight : {
+	   move : 10
+	  },
+	  tooltip : {
+	   frameProps : {
+	    opacity : 0.5
+	   }
+	  },
+	  startAnimation : {
+	   active : true,
+	   type : "grow"
+	  }
+	 },
+	 features : {
+	  legend : {
+	   horizontal : false,
+	   width : 40,
+	   height : 80,
+	   x : 252,
+	   y : 218,
+	   borderProps : {
+	    "fill-opacity" : 0.3
+	   }
+	  }
+	 }
+	}
+	$("#chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [25, 75]
+	 },
+	 labels : ["a", "b"],
+	 legend : ["a", "b"],
+	 tooltips : {
+	  serie1 : ["hello", "b"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "red"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#FFFF00"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "green"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "gray"
+	   }
+	  }]
+	 }
+	});
+
+
+})

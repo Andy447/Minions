@@ -98,3 +98,8 @@ Tab pane customizations
 	font-size:20px;
 	cursor:pointer;
 }
+
+#chart {
+	width:150px;
+	height:150px;
+}
