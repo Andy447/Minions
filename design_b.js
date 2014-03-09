@@ -3,27 +3,6 @@ var monthDays = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
 var weekDay = new Array('Sun', 'Mon', 'Tue', 'Wed', 'Thurs', 'Fri', 'Sat');
 
 $(document).ready(function() {
-	var slider = $('.calendarSlider').bxSlider({
-		slideWidth: 400,
-		minSlides: 2,
-		maxSlides: 3,
-		moveSlides: 1,
-		slideMargin: 10,
-		nextSelector: '#slider-next',
-		prevSelector: '#slider-prev',
-		nextText: '',
-		prevText: '',
-	});
-
-	$('#slider-next').click(function() {
-  		slider.goToNextSlide();
- 	});
-	$('#slider-prev').click(function() {
-  		slider.goToPrevSlide();
-  	})
-});
-
-$(document).ready(function() {
 	$('#calendar-jan').fullCalendar({
 		year: 2014,
 		month: 0,
@@ -33,19 +12,36 @@ $(document).ready(function() {
 		},
 		events: [
 			{
-            start: '2014-01-10',
-            backgroundColor: '#5254FF',
-            borderColor: '#5254FF'
+				id: 'assignments',
+				title: 'A1',
+            	start: '2014-01-05',
+            	backgroundColor: '#FA8A28',
+            	borderColor: '#FA8A28'
 			},
 			{
-            start  : '2014-01-10',
-            backgroundColor: '#FA8A28',
-            borderColor: '#FA8A28'
+				id: 'assignments',
+				title: 'A2',
+            	start: '2014-01-19',
+            	backgroundColor: '#FA8A28',
+            	borderColor: '#FA8A28'
+			},
+			{
+				id:'midterms',
+				title: 'M1',
+				start: '2014-01-20',
+				backgroundColor: '#5254FF',
+				borderColor: '#5254FF'
 			}
 		],
 
 		eventClick: function(calEvent, jsEvent, view) {
-			alert ('Event');
+			if (calEvent.id == 'midterms') {
+				$('#myTab a[href="#midterms"]').tab('show');
+
+			}
+		$('html, body').animate({
+        	scrollTop: $('#'+calEvent.title).offset().top
+   		}, 500);
 		}
 	})
 	$('#calendar-feb').fullCalendar({
@@ -54,7 +50,21 @@ $(document).ready(function() {
 		header: {
 			left: 'title',
 			right: ''
-		}
+		},
+		events: [
+			{
+				title: 'A3',
+            	start: '2014-02-02',
+            	backgroundColor: '#FA8A28',
+            	borderColor: '#FA8A28'
+			},
+			{
+				title: 'A4',
+            	start: '2014-02-16',
+            	backgroundColor: '#FA8A28',
+            	borderColor: '#FA8A28'
+			}
+		],
 	})
 	$('#calendar-mar').fullCalendar({
 		year: 2014,
@@ -62,7 +72,27 @@ $(document).ready(function() {
 		header: {
 			left: 'title',
 			right: ''
-		}
+		},
+		events: [
+			{
+				title: 'A5',
+            	start: '2014-03-02',
+            	backgroundColor: '#FA8A28',
+            	borderColor: '#FA8A28'
+			},
+			{
+				title: 'A6',
+            	start: '2014-03-16',
+            	backgroundColor: '#FA8A28',
+            	borderColor: '#FA8A28'
+			},
+			{
+				title: 'A7',
+            	start: '2014-03-30',
+            	backgroundColor: '#FA8A28',
+            	borderColor: '#FA8A28'
+			}
+		],
 	})
 	$('#calendar-apr').fullCalendar({
 		year: 2014,
@@ -76,12 +106,11 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 	$('#slider-left').click(function() {
-		$('.calendar-container').animate({scrollLeft: '-=570'});
+		$('.calendar-container').animate({scrollLeft: '-=580'});
 		console.log('you clicked the left one');
 	});
 	$('#slider-right').click(function() {
-		$('.calendar-container').animate({scrollLeft: '+=570'});
+		$('.calendar-container').animate({scrollLeft: '+=580'});
 	})
 })
-
 
