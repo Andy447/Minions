@@ -597,7 +597,8 @@ $(document).ready(function() {
 				title: 'M1',
 				start: '2014-01-22',
 				backgroundColor: '#5254FF',
-				borderColor: '#5254FF'
+				borderColor: '#5254FF',
+				url: '#test'
 		}
 		$('#calendar-jan').fullCalendar('renderEvent', changedEvent);
 		$('#alertModal').modal('toggle');
@@ -621,7 +622,8 @@ $(document).ready(function() {
 				title: 'M2',
 				start: '2014-03-03',
 				backgroundColor: '#5254FF',
-				borderColor: '#5254FF'
+				borderColor: '#5254FF',
+				url: '#test'
 		}
 		$('#calendar-mar').fullCalendar('renderEvent', newEvent);	
 		$('#newExamModal').modal('toggle');
@@ -644,7 +646,8 @@ $(document).ready(function() {
 				title: 'A5',
 				start: '2014-02-28',
 				backgroundColor: '#FA8A28',
-				borderColor: '#FA8A28'
+				borderColor: '#FA8A28',
+				url: '#test'
 		}
 		$('#calendar-feb').fullCalendar('renderEvent', newEvent);
 		$('#alertModal').modal('toggle');
