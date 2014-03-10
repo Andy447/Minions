@@ -14,6 +14,16 @@ body {
    margin: 0;
 }
 
+.warning {
+  font-weight:900;
+  color:red;
+  border: 40px solid red;
+}
+
+li a.black {
+  color: black;
+}
+
 #Page_content{
 	display:block;
 }
