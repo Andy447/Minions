@@ -23,7 +23,8 @@ $(document).ready(function() {
 				title: 'A1',
             	start: '2014-01-05',
             	backgroundColor: '#FA8A28',
-            	borderColor: '#FA8A28'
+            	borderColor: '#FA8A28',
+            	url: '#test'
 			},
 			{
 				id: 'A2',
@@ -32,7 +33,8 @@ $(document).ready(function() {
             	start: '2014-01-19',
             	backgroundColor: '#FA8A28',
             	borderColor: '#FA8A28',
-            	className:'calendar-warning'
+            	className:'calendar-warning',
+            	url: '#test'
 			},
 			{
 				id:'M1',
@@ -41,7 +43,8 @@ $(document).ready(function() {
 				start: '2014-01-20',
 				backgroundColor: '#5254FF',
 				borderColor: '#5254FF',
-				className:'calendar-warning'
+				className:'calendar-warning',
+				url: '#test'
 			}
 		],
 
@@ -73,7 +76,8 @@ $(document).ready(function() {
             	start: '2014-02-02',
             	backgroundColor: '#FA8A28',
             	borderColor: '#FA8A28',
-            	className:'calendar-warning'
+            	className:'calendar-warning',
+            	url: '#test'
 			},
 			{
 				id: 'A4',
@@ -82,7 +86,8 @@ $(document).ready(function() {
             	start: '2014-02-16',
             	backgroundColor: '#FA8A28',
             	borderColor: '#FA8A28',
-            	className:'calendar-warning'
+            	className:'calendar-warning',
+            	url: '#test'
 			}
 		],
 
@@ -113,7 +118,8 @@ $(document).ready(function() {
 				title: 'A5',
             	start: '2014-03-02',
             	backgroundColor: '#FA8A28',
-            	borderColor: '#FA8A28'
+            	borderColor: '#FA8A28',
+            	url: '#test'
 			},
 			{
 				id: 'A6',
@@ -121,7 +127,8 @@ $(document).ready(function() {
 				title: 'A6',
             	start: '2014-03-16',
             	backgroundColor: '#FA8A28',
-            	borderColor: '#FA8A28'
+            	borderColor: '#FA8A28',
+            	url: '#test'
 			},
 			{
 				id: 'A7',
@@ -129,7 +136,8 @@ $(document).ready(function() {
 				title: 'A7',
             	start: '2014-03-30',
             	backgroundColor: '#FA8A28',
-            	borderColor: '#FA8A28'
+            	borderColor: '#FA8A28',
+            	url: '#test'
 			}
 		],
 		eventClick: function(calEvent, jsEvent, view) {
