@@ -588,6 +588,7 @@ $(document).ready(function() {
 $(document).ready(function() {
 	$('.newM1date').click(function() {
 		$('#M1-date').empty().append('11:00AM - January 22nd, 2014');
+		$('#M1-conflict').empty().append('0%');
 		$('.alert-modal-body').empty().append('Midterm 1 date successfully changed to 11:00AM - January 22nd, 2014');
 		$('#calendar-jan').fullCalendar('removeEvents', 'M1');
 		var changedEvent = {
@@ -624,7 +625,7 @@ $(document).ready(function() {
 		}
 		$('#calendar-mar').fullCalendar('renderEvent', newEvent);	
 		$('#newExamModal').modal('toggle');
-		$('.alert-modal-body').empty().append('Midterm 2 successfully created on March 3rd, 2014 at 1:00PM in DMP 101');
+		$('.alert-modal-body').empty().append('Midterm 2 successfully created on March 3, 2014 at 1:00PM in DMP 101');
 		$('#alertModal').modal('toggle');
 		$('#M2').show();
 	})
@@ -634,7 +635,8 @@ $(document).ready(function() {
 $(document).ready(function() {
 	$('#changeAssignmentDate').click(function() {
 		$('#A5-date').empty().append('11:00AM - February 28, 2014');
-		$('.alert-modal-body').empty().append('Assignment 5 due date successfully changed from 11:00AM March 3rd, 2014 to 11:00AM - February 28, 2014');
+		$('#A5-conflict').empty().append('2%');
+		$('.alert-modal-body').empty().append('Assignment 5 due date successfully changed from 11:00AM March 2, 2014 to 11:00AM - February 28, 2014');
 		$('#calendar-mar').fullCalendar('removeEvents', 'A5');
 		var newEvent = {
 				id:'A5',
