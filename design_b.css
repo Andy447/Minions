@@ -1,4 +1,5 @@
 
+
 /*---------------------------------------------------------------------
 Calendar configurations
 -----------------------------------------------------------------------*/
@@ -34,7 +35,7 @@ Calendar configurations
 	cursor: pointer;
 }
 /*---------------------------------------------------------------------
-Calendar legend configurations
+legend configurations
 -----------------------------------------------------------------------*/
 
 .legend-item {
@@ -50,7 +51,7 @@ Calendar legend configurations
 	border-radius: 5px;
 	border: 1px solid #C7C7C7;
 }
-.legend-midterms, .legend-assignments, .legend-labs, .legend-events{
+.legend-midterms, .legend-assignments, .legend-labs, .legend-events, .legend-conflicts, .legend-noconflicts{
 	margin-bottom:5px;
 	text-align: center;
 	color:white;
@@ -82,11 +83,22 @@ Calendar legend configurations
 	font-weight:bold;
 }
 
+.legend-conflicts {
+	border: 1px solid #FF1212;
+	background-color: #FF1212;
+	width: 100px;
+}
+
+.legend-noconflicts {
+	border: 1px solid #335CFF;
+	background-color: #335CFF;
+	width: 100px;
+}
 /*------------------------------------------------------------------------
 Tab pane customizations
 -------------------------------------------------------------------------*/
 .tab-pane {
-	padding-top:20px;
+	padding:20px;
 }
 
 .table {
@@ -99,7 +111,79 @@ Tab pane customizations
 	cursor:pointer;
 }
 
-#chart {
-	width:150px;
+.pie-chart {
+	width:145px;
 	height:150px;
+}
+
+/*--------------------------------------------------------------
+exam table 
+---------------------------------------------------------------*/
+.table-custom {
+	width:100%;
+}
+
+td.cell-exam-title-header, td.cell-exam-title {
+	width:30%;
+	text-align: center;
+}
+
+td.cell-exam-conflicts-header, td.cell-exam-conflicts {
+	width:25%;
+	text-align: center;
+}
+
+td.cell-exam-date-header, td.cell-exam-date {
+	width:30%;
+	text-align: center;
+}
+
+td.cell-exam-datechange-header, td.cell-exam-datechange {
+	width:7%;
+	text-align: center;
+}
+
+td.cell-exam-delete-header, td.cell-exam-delete {
+	width:7%;
+	text-align: center;
+}
+
+td.cell-exam-title-header, td.cell-exam-conflicts-header, td.cell-exam-date-header, td.cell-exam-datechange-header, td.cell-exam-delete-header {
+	font-weight:bold;
+}
+
+.date-chooser {
+	width: 100%;
+    overflow: auto;
+    height: 280px;
+    white-space:nowrap;
+}
+
+.pie-graph-container {
+	display:inline-block;
+}
+
+.pie-graph-container th, .pie-graph-container td {
+	text-align:center;
+}
+
+button.details, button.select {
+	margin:5px 0px;
+}
+
+.week-prev-next, .week-prev-next td {
+	width: 100%;
+	text-align:center;
+}
+
+/*------------------------------------------------------------
+modal dialog
+---------------------------------------------------------------*/
+.modal-body-lg {
+	height:400px;
+	padding-top:20px;
+}
+
+#saveNewExam {
+	margin:10px;
 }

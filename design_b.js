@@ -13,22 +13,25 @@ $(document).ready(function() {
 		},
 		events: [
 			{
-				id: 'assignments',
+				id: 'A1',
+				tag: 'assignments',
 				title: 'A1',
             	start: '2014-01-05',
             	backgroundColor: '#FA8A28',
             	borderColor: '#FA8A28'
 			},
 			{
-				id: 'assignments',
-				title: 'A2',
+				id: 'A2',
+				tag: 'assignments',
+				title: 'A2 - !',
             	start: '2014-01-19',
             	backgroundColor: '#FA8A28',
             	borderColor: '#FA8A28'
 			},
 			{
-				id:'midterms',
-				title: 'M1',
+				id:'M1',
+				tag:'exams',
+				title: 'M1 - !!!',
 				start: '2014-01-20',
 				backgroundColor: '#5254FF',
 				borderColor: '#5254FF'
@@ -36,12 +39,15 @@ $(document).ready(function() {
 		],
 
 		eventClick: function(calEvent, jsEvent, view) {
-			if (calEvent.id == 'midterms') {
-				$('#myTab a[href="#midterms"]').tab('show');
-
+			if (calEvent.tag == 'exams') {
+				$('#myTab a[href="#exams"]').tab('show');
 			}
+			if (calEvent.tag == 'assignments') {
+				$('#myTab a[href="#assignments"]').tab('show');
+			}
+		
 		$('html, body').animate({
-        	scrollTop: $('#'+calEvent.title).offset().top
+        	scrollTop: $('#'+calEvent.id).offset().top
    		}, 500);
 		}
 	})
@@ -54,18 +60,35 @@ $(document).ready(function() {
 		},
 		events: [
 			{
-				title: 'A3',
+				id: 'A3',
+				tag: 'assignments',
+				title: 'A3 - !',
             	start: '2014-02-02',
             	backgroundColor: '#FA8A28',
             	borderColor: '#FA8A28'
 			},
 			{
-				title: 'A4',
+				id: 'A4',
+				tag: 'assignments',
+				title: 'A4 - !',
             	start: '2014-02-16',
             	backgroundColor: '#FA8A28',
             	borderColor: '#FA8A28'
 			}
 		],
+
+		eventClick: function(calEvent, jsEvent, view) {
+			if (calEvent.tag == 'exams') {
+				$('#myTab a[href="#exams"]').tab('show');
+			}
+			if (calEvent.tag == 'assignments') {
+				$('#myTab a[href="#assignments"]').tab('show');
+			}
+		
+		$('html, body').animate({
+        	scrollTop: $('#'+calEvent.id).offset().top
+   		}, 500);
+		}
 	})
 	$('#calendar-mar').fullCalendar({
 		year: 2014,
@@ -76,24 +99,42 @@ $(document).ready(function() {
 		},
 		events: [
 			{
+				id: 'A5',
+				tag: 'assignments',
 				title: 'A5',
             	start: '2014-03-02',
             	backgroundColor: '#FA8A28',
             	borderColor: '#FA8A28'
 			},
 			{
+				id: 'A6',
+				tag: 'assignments',
 				title: 'A6',
             	start: '2014-03-16',
             	backgroundColor: '#FA8A28',
             	borderColor: '#FA8A28'
 			},
 			{
+				id: 'A7',
+				tag: 'assignments',
 				title: 'A7',
             	start: '2014-03-30',
             	backgroundColor: '#FA8A28',
             	borderColor: '#FA8A28'
 			}
 		],
+		eventClick: function(calEvent, jsEvent, view) {
+			if (calEvent.tag == 'exams') {
+				$('#myTab a[href="#exams"]').tab('show');
+			}
+			if (calEvent.tag == 'assignments') {
+				$('#myTab a[href="#assignments"]').tab('show');
+			}
+		
+		$('html, body').animate({
+        	scrollTop: $('#'+calEvent.id).offset().top
+   		}, 500);
+		}
 	})
 	$('#calendar-apr').fullCalendar({
 		year: 2014,
@@ -101,6 +142,18 @@ $(document).ready(function() {
 		header: {
 			left: 'title',
 			right: ''
+		}, 
+		eventClick: function(calEvent, jsEvent, view) {
+			if (calEvent.tag == 'exams') {
+				$('#myTab a[href="#exams"]').tab('show');
+			}
+			if (calEvent.tag == 'assignments') {
+				$('#myTab a[href="#assignments"]').tab('show');
+			}
+		
+		$('html, body').animate({
+        	scrollTop: $('#'+calEvent.id).offset().top
+   		}, 500);
 		}
 	})
 })
@@ -108,7 +161,6 @@ $(document).ready(function() {
 $(document).ready(function() {
 	$('#slider-left').click(function() {
 		$('.calendar-container').animate({scrollLeft: '-=580'});
-		console.log('you clicked the left one');
 	});
 	$('#slider-right').click(function() {
 		$('.calendar-container').animate({scrollLeft: '+=580'});
@@ -152,36 +204,350 @@ $(document).ready(function() {
 	  }
 	 }
 	}
-	$("#chart").chart({
+	$("#jan20chart").chart({
 	 template : "pie_basic_1",
 	 values : {
-	  serie1 : [25, 75]
+	  serie1 : [40,60]
 	 },
-	 labels : ["a", "b"],
-	 legend : ["a", "b"],
 	 tooltips : {
-	  serie1 : ["hello", "b"]
+	  serie1 : ["40% busy", "60% free"]
 	 },
 	 defaultSeries : {
 	  values : [{
 	   plotProps : {
-	    fill : "red"
+	    fill : "#FF1212"
 	   }
 	  }, {
 	   plotProps : {
-	    fill : "#FFFF00"
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+	$("#jan21chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [20,80]
+	 },
+	 tooltips : {
+	  serie1 : ["20% busy", "80% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
 	   }
 	  }, {
 	   plotProps : {
-	    fill : "green"
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+	$("#jan22chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [0,100]
+	 },
+	 tooltips : {
+	  serie1 : ["0 busy", "100% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
 	   }
 	  }, {
 	   plotProps : {
-	    fill : "gray"
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+	$("#jan23chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [45, 55]
+	 },
+	 tooltips : {
+	  serie1 : ["45% busy", "55% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+	$("#jan24chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [61, 39]
+	 },
+	 tooltips : {
+	  serie1 : ["61% busy", "39% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+	$("#jan25chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [0,100]
+	 },
+	 tooltips : {
+	  serie1 : ["0% busy", "100% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+	$("#jan26chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [0, 100]
+	 },
+	 tooltips : {
+	  serie1 : ["0% busy", "100% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+	$("#feb27chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [44, 56]
+	 },
+	 tooltips : {
+	  serie1 : ["44% busy", "56% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+	$("#feb28chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [2, 98]
+	 },
+	 tooltips : {
+	  serie1 : ["2% busy", "98% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+	$("#mar1chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [50, 50]
+	 },
+	 tooltips : {
+	  serie1 : ["50% busy", "50% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+	$("#mar2chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [40, 60]
+	 },
+	 tooltips : {
+	  serie1 : ["40% busy", "60% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+	$("#mar3chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [80, 20]
+	 },
+	 tooltips : {
+	  serie1 : ["80% busy", "20% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+	$("#mar4chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [45, 55]
+	 },
+	 tooltips : {
+	  serie1 : ["45% busy", "55% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+	$("#mar5chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [45, 55]
+	 },
+	 tooltips : {
+	  serie1 : ["45% busy", "55% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
 	   }
 	  }]
 	 }
 	});
 
+})
 
+/*successfully changing the midterm date*/
+$(document).ready(function() {
+	$('.newM1date').click(function() {
+		$('#M1-date').empty().append('11:00AM - January 22nd, 2014');
+		$('.alert-modal-body').empty().append('Midterm 1 date successfully changed to 11:00AM - January 22nd, 2014');
+		$('#calendar-jan').fullCalendar('removeEvents', 'M1');
+		var changedEvent = {
+				id:'M1',
+				tag:'midterms',
+				title: 'M1',
+				start: '2014-01-22',
+				backgroundColor: '#5254FF',
+				borderColor: '#5254FF'
+		}
+		$('#calendar-jan').fullCalendar('renderEvent', changedEvent);
+		$('#alertModal').modal('toggle');
+	})
+})
+
+/*adding a new midterm*/
+$(document).ready(function() {
+	$('#datepicker').datepicker();
+	$('#create-new-exam').click(function() {
+		$('#newExamModal').modal('toggle');
+	})
+})
+
+$(document).ready(function() {
+	$('#M2').hide();
+	$('#saveNewExam').click(function() {
+		var newEvent = {
+				id:'M2',
+				tag:'midterms',
+				title: 'M2',
+				start: '2014-03-03',
+				backgroundColor: '#5254FF',
+				borderColor: '#5254FF'
+		}
+		$('#calendar-mar').fullCalendar('renderEvent', newEvent);	
+		$('#newExamModal').modal('toggle');
+		$('.alert-modal-body').empty().append('Midterm 2 successfully created on March 3rd, 2014');
+		$('#alertModal').modal('toggle');
+		$('#M2').show();
+	})
+})
+
+/*changing assignment 5 date*/
+$(document).ready(function() {
+	$('#changeAssignmentDate').click(function() {
+		$('#A5-date').empty().append('11:00AM - February 28, 2014');
+		$('.alert-modal-body').empty().append('Assignment 5 due date successfully changed from 11:00AM March 3rd, 2014 to 11:00AM - February 28, 2014');
+		$('#calendar-mar').fullCalendar('removeEvents', 'A5');
+		var newEvent = {
+				id:'A5',
+				tag:'assignments',
+				title: 'A5',
+				start: '2014-02-28',
+				backgroundColor: '#FA8A28',
+				borderColor: '#FA8A28'
+		}
+		$('#calendar-feb').fullCalendar('renderEvent', newEvent);
+		$('#alertModal').modal('toggle');
+	})
 })
