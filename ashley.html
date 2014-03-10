@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<link rel="icon" 
+      type="image/png" 
+      href="./images/m.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professor Landing Page</title>
+	   <!--<link rel="stylesheet" href="css/profView.css">-->
+	   <link rel="stylesheet" href="css/prof_a.css">
+	   <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+	<script  type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+	
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+	//Default Action
+	$(".tab_content").hide(); //Hide all content
+	$("ul.tabs li:first").addClass("active").show(); //Activate first tab
+	$(".tab_content:first").show(); //Show first tab content
+	
+	//On Click Event
+	$("ul.tabs li").click(function() {
+		$("ul.tabs li").removeClass("active"); //Remove any "active" class
+		$(this).addClass("active"); //Add "active" class to selected tab
+		$(".tab_content").hide(); //Hide all tab content
+		var activeTab = $(this).find("a").attr("href"); //Find the rel attribute value to identify the active tab + content
+		$(activeTab).fadeIn(); //Fade in the active content
+		return false;
+	});
+
+});
+</script>
+</head>
+<body>
+      <div id="myHeader" class="container-fluid" style="width:100%; height:75px;">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="PV1_Home.html"><font size="6"><b>Professor View</b></font></a>
+        </div>
+        <div class="navbar-collapse collapse" style="width:100%">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+      </div>
+	  <div style="height:5px; width:100%; background-color:#FFFFFF;"></div>
+	  <div id = "page_container" style=" width:100%" align="center">
+      <div id = "mysidebar" style="float:left; width:11%; height:277px;" >
+          <ul class="nav2 nav-sidebar">
+            <li><a href="PV1_Home.html">Calendar</a></li>
+            <li><a href="PV1_Assignment.html"><div id ="active2">Assignment</div></a></li>
+            <li><a href="PV1_Exams.html">Exams</a></li>
+            <li><a href="PV1_Labs.html">Labs</a></li>
+	        <li><a href="PV1_Events.html">Events</a></li>
+          </ul>
+        </div>
+		
+			   <div id = "Page_content" style="float:left; width:89%; height:630px;">
+		  <h2><select>
+  <option value="CPSC 310">CPSC 110</option>
+  <option value="CPSC 320">CPSC 320</option>
+  <option value="CPSC 304">CPSC 304</option>
+  <option value="CPSC 344">CPSC 344</option>
+   </select></h2>
+      <h1>Assignment</h1>
+	  <div align="left">
+		<div id="content" style="background-color:#EEEEEE;height:400px;width:1200px;float:left;">
+
+		<!-- Indicates a successful or positive action -->
+		 
+		<!-- <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Create New Assignment</button><br> --> 
+			<button type="button" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>data-toggle="modal" data-target="#myModal">Create New Assignment</button>
+			<div class="modal fade">
+			<div class="modal-dialog">
+			<div class="modal-content">
+			<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">Create New Assignment</h4>
+				</div>
+					<div class="modal-body">
+						<p>One fine body&hellip;</p>
+					</div>
+				<div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			<button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+		<table class="table">
+		
+		<tr>
+			<th>Assignments</th>
+			<th>Lates</th>		
+			<th>Due Dates</th>
+			<th>Edit</th>
+
+
+  </tr>
+<tr>
+  <td><a href="url">Assignment 1</a></td>
+  <td><a href="#"><span class="badge">7</span></a></td>
+  <!--<td class="alert alert-danger">7 lates</td>-->		
+  <td>January 8, 2014</td>
+  <td><a href="url"><span class="glyphicon glyphicon-calendar"></span></a></td>
+</tr>
+
+<tr>
+  <td><a href="url">Assignment 2</a></td>
+  <td class="alert alert-danger">11 lates</td>		
+  <td>January 25, 2014</td>
+  <td><a href="url"><span class="glyphicon glyphicon-calendar"></span></a></td>
+
+</tr>
+<tr>
+  <td><a href="url">Assignment 3</a></td>
+  <td></td>		
+  <td>February 8, 2014</td>
+  <td><a href="url"><span class="glyphicon glyphicon-calendar"></span></a></td>
+</tr>
+
+<tr>
+  <td><a href="url">Assignment 4</a></td>
+  <td></td>		
+  <td>February 21, 2014</td>
+  <td><a href="url"><span class="glyphicon glyphicon-calendar"></span></a></td>
+</tr>
+
+<tr>
+  <td><a href="url">Assignment 5</a></td>
+  <td></td>		
+  <td>March 5, 2014</td>
+  <td><a href="url"><span class="glyphicon glyphicon-calendar"></span></a></td>
+</tr>
+
+<tr>
+  <td><a href="url">Assignment 6</a></td>
+  <td></td>		
+  <td>March 18, 2014</td>
+  <td><a href="url"><span class="glyphicon glyphicon-calendar"></span></a></td>
+</tr>
+
+<tr>
+  <td><a href="url">Assignment 7</a></td>
+  <td></td>		
+  <td>March 31, 2014</td>
+  <td><a href="url"><span class="glyphicon glyphicon-calendar"></span></a></td>
+</tr>
+
+<tr>
+  <td><a href="url">Assignment 8</a></td>
+  <td></td>		
+  <td>April 8, 2014</td>
+  <td><a href="url"><span class="glyphicon glyphicon-calendar"></span></a></td>
+</tr>
+</table>
+	  </div>
+</div>
+
+<div id="footer_2" style="background-color:#000000;clear:both;text-align:center;"><font color="white">
+Copyright TeamMinions.com</font></div>
+</body>
+</html>
+<script type=”text/javascript”>
+function tab(tab) {
+document.getElementById(‘tab1').style.display = ‘none’;
+document.getElementById(‘tab2').style.display = ‘none’;
+document.getElementById(‘li_tab1').setAttribute(“class”, “”);
+document.getElementById(‘li_tab2').setAttribute(“class”, “”);
+document.getElementById(tab).style.display = ‘block’;
+document.getElementById(‘li_’+tab).setAttribute(“class”, “active”);
+}
+</script>
