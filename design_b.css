@@ -31,6 +31,10 @@ Calendar configurations
 	width:540px;
 }
 
+.calendar-warning {
+	font-weight:900;
+	font-size:19px;
+}
 .fc-day-content:hover{
 	cursor: pointer;
 }

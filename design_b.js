@@ -2,6 +2,11 @@ var months = new Array('January', 'February', 'March', 'April', 'May', 'June', '
 var monthDays = new Array(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31);
 var weekDay = new Array('Sun', 'Mon', 'Tue', 'Wed', 'Thurs', 'Fri', 'Sat');
 
+/*conflict helper*/
+$(document).ready(function() {
+	$('#conflict-info').popover('hide');
+})
+
 /*initiating the calendar widgets*/
 $(document).ready(function() {
 	$('#calendar-jan').fullCalendar({
@@ -26,7 +31,8 @@ $(document).ready(function() {
 				title: 'A2 - !',
             	start: '2014-01-19',
             	backgroundColor: '#FA8A28',
-            	borderColor: '#FA8A28'
+            	borderColor: '#FA8A28',
+            	className:'calendar-warning'
 			},
 			{
 				id:'M1',
@@ -34,7 +40,8 @@ $(document).ready(function() {
 				title: 'M1 - !!!',
 				start: '2014-01-20',
 				backgroundColor: '#5254FF',
-				borderColor: '#5254FF'
+				borderColor: '#5254FF',
+				className:'calendar-warning'
 			}
 		],
 
@@ -65,7 +72,8 @@ $(document).ready(function() {
 				title: 'A3 - !',
             	start: '2014-02-02',
             	backgroundColor: '#FA8A28',
-            	borderColor: '#FA8A28'
+            	borderColor: '#FA8A28',
+            	className:'calendar-warning'
 			},
 			{
 				id: 'A4',
@@ -73,7 +81,8 @@ $(document).ready(function() {
 				title: 'A4 - !',
             	start: '2014-02-16',
             	backgroundColor: '#FA8A28',
-            	borderColor: '#FA8A28'
+            	borderColor: '#FA8A28',
+            	className:'calendar-warning'
 			}
 		],
 
@@ -204,6 +213,86 @@ $(document).ready(function() {
 	  }
 	 }
 	}
+	$(".generic_pie_1").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [40,60]
+	 },
+	 tooltips : {
+	  serie1 : ["40% busy", "60% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+	$(".generic_pie_2").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [80,20]
+	 },
+	 tooltips : {
+	  serie1 : ["80% busy", "20% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+	$(".generic_pie_3").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [30,70]
+	 },
+	 tooltips : {
+	  serie1 : ["30% busy", "70% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+	$(".generic_pie_4").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [10,90]
+	 },
+	 tooltips : {
+	  serie1 : ["10% busy", "90% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
 	$("#jan20chart").chart({
 	 template : "pie_basic_1",
 	 values : {
@@ -527,7 +616,7 @@ $(document).ready(function() {
 		}
 		$('#calendar-mar').fullCalendar('renderEvent', newEvent);	
 		$('#newExamModal').modal('toggle');
-		$('.alert-modal-body').empty().append('Midterm 2 successfully created on March 3rd, 2014');
+		$('.alert-modal-body').empty().append('Midterm 2 successfully created on March 3rd, 2014 at 1:00PM in DMP 101');
 		$('#alertModal').modal('toggle');
 		$('#M2').show();
 	})
