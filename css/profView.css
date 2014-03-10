@@ -30,10 +30,7 @@ li a.black {
 #calendar{
  overflow: auto; 
 }
-#mysidebar{
-	border-style:solid;
-	border-color:#00FF00;
-}
+
 article,
 aside,
 details,
@@ -302,7 +299,7 @@ html {
    clear: both;
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
   line-height: 1.42857143;
   color: #333;
@@ -532,7 +529,7 @@ h6 .small,
 h1,
 .h1 {
   font-size: 50px;
-  font-family:"Times New Roman", Times, serif;
+  font-family:"Arial", Times, serif;
 }
 h2,
 .h2 {
@@ -3554,7 +3551,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   display: block;
   padding: 10px 10px;
   border-style:solid;
-  background-color: #009933;
+  background-color: #000066;
+  border-radius:10px;
   font-weight:bold;
 }
 .nav2 {
@@ -5898,7 +5896,7 @@ button.close {
 }
 
 #active2 {
- color:blue;
+	color: #BABAB2;
 }
 
 ul.tabs {
@@ -5982,6 +5980,10 @@ html ul.tabs li.active, html ul.tabs li.active a:hover  {
 {
 	text-align: center;
 	margin-top:1cm;
+}
+#rounded
+{
+ border-radius:10px;
 }
 
 /*# sourceMappingURL=bootstrap.css.map */
