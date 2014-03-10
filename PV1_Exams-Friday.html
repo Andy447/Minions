@@ -69,72 +69,55 @@ $(document).ready(function() {
           </ul>
         </div>
 		
-			   <div id = "Page_content" style="float:left; width:89%; height:900px;">
-			   <P><h2><b><u>Midterm 1</b></u></h2></P> 
+			   <div id = "Page_content" style="float:left; width:89%; height:630px;">
+			   <P><h2><b>Conflict Details</b></h2></P>
+               <P><b>Friday - January 24th 2014</b></P>			   
 <!--    <div class="deck-screen-left">
 						<canvas id="canvas" height="200" width="400"></canvas>
 				<br>
 			</div>
 </div> -->
-<div id="mytables">
-<table style="width:100%" align="center">
-<tr>
-  <td><b><u><font color="black">Item Name</font></u></b></td>
-  <td><b><u><font color="black">% of Students with Conflicts</font></u></b></td>
-  <td><b><u><font color="black">Date</font></u></b></td>
-  <td><b><u><font color="black">Time</font></u></b></td>
-  <td><b><u><font color="black"></font></u></b></td>
+<table border="1" style="width:60%" align="center">
+<tr align="center">
+  <td><b>Conflicting Course</b></td>
+  <td><b>Item Name</b></td>
+  <td><b>% of Students with this Conflict</b></td>		
   </tr>
-<tr>
-  <td><a href="PV1_Exams-M1Details.html"><b><font color="black">Midterm 1</font></b></a></td>
-  <td><span style="background-color:green"><font color="white">%3</font></span></td>		
-  <td>Jan 22 2014</td>
-  <td>1:00 PM</td>
-<td><form action="PV1_Exams-Changed_midterm1to22.html">
-    <input type="submit" value="Save Changes"></form></td>
+     <tr align="center">
+  <td>MATH 101</td>
+  <td>Midterm 1</td>	
+  <td>56%</td>  
   </tr>
-  <tr>
-<td><font color="white">.</font></td>
- <td><font color="white">.</font></td>
-</tr>
+<tr align="center">
+  <td>CPSC 121</td>
+  <td>Assignment 1</td>	
+  <td>40%</td>  
+  </tr>
+    <tr align="center">
+  <td>BIOL 121</td>
+  <td>Assignment 3</td>	
+  <td>23%</td>  
+  </tr>
+ <tr align="center">
+  <td>MATH 100</td>
+  <td>Quiz 2</td>	
+  <td>20%</td>  
+  </tr>
+  <tr align="center">
+  <td>ENG 110</td>
+  <td>Term Paper</td>	
+  <td>10%</td>  
+  </tr>
+   <tr align="center">
+  <td>ASTR 102</td>
+  <td>Lab Assignment 3</td>	
+  <td>7%</td>  
+  </tr>
 </table>
-</div>
-<P><i>Click on a bar in the bar graph to view Conflict Details for the selected day</i></P>
-<img src="./images/444graph.JPG" alt="info_text1" width = "990px" height = "400px" usemap ="#graphmap">
-<map name="graphmap">
- <area shape="rect" coords="110,20,150,400" alt="Sunday" href="PV1_Exams-Sunday.html">
- <area shape="rect" coords="240,20,280,400" alt="Monday" href="PV1_Exams-Monday.html">
- <area shape="rect" coords="370,20,410,400" alt="Tuesday" href="PV1_Exams-Tuesday.html">
- <area shape="rect" coords="500,20,540,400" alt="Wednesday" href="PV1_Exams-Wednesday.html">
- <area shape="rect" coords="632,20,672,400" alt="Thursday" href="PV1_Exams-Thursday.html">
- <area shape="rect" coords="762,20,802,400" alt="Friday" href="PV1_Exams-Friday.html">
- <area shape="rect" coords="894,20,934,400" alt="Saturday" href="PV1_Exams-Saturday.html">
-</map> 
-<table style="width:100%" align="center">
-<tr>
-<td><font color="white">.......</font></td>
-<td><form action="#"><input type="submit" value="&larr;" onclick="alert('Go to the week before')"></form></td>
-<td><font color="white">..</font></td>
-<td><form action="#"><input type="submit" value="Jan 19" onclick="alert('Changed Date of Miderm 1 to Jan 19th')"></form></td>
-<td><font color="white">..</font></td>
-<td><form action="PV1_Exams-Midterm1.html"><input type="submit" value="Jan 20" onclick="alert('Changed Date of Miderm 1 to Jan 20th')"></form></td>
-<td><font color="white">....</font></td>
-<td><form action="#"><input type="submit" value="Jan 21" onclick="alert('Changed Date of Miderm 1 to Jan 21st')"></form></td>
-<td><font color="white">...</font></td>
-<td><form action="PV1_Exams-Midterm1-changedto22.html"><input type="submit" value="Jan 22" onclick="alert('Changed Date of Miderm 1 to Jan 22nd')"></form></td>
-<td><font color="white">..</font></td>
-<td><form action="#"><input type="submit" value="Jan 23" onclick="alert('Changed Date of Miderm 1 to Jan 23rd')"></form></td>
-<td><font color="white">...</font></td>
-<td><form action="#"><input type="submit" value="Jan 24" onclick="alert('Changed Date of Miderm 1 to Jan 24th')"></form></td>
-<td><font color="white">..</font></td>
-<td><form action="#"><input type="submit" value="Jan 25" onclick="alert('Changed Date of Miderm 1 to Jan 25th')"></form></td>
-<td><form action="#"><input type="submit" value="&rarr;" onclick="alert('Go to the week before')"></form></td>
-  </tr>
-  <tr>
-<td><font color="white">.</font></td>
- <td><font color="white">.</font></td>
-</tr>
-</table>
+<p><b>Total Number of Students in the course with these conflicts: <i><font color="red">%61</font></i></b></P>
+<form action="PV1_Exams-Midterm1.html">
+    <input type="submit" value="Back to Date Change Graph">
+</form>
 </div>
 
 <div id="footer_2" style="background-color:#000000;clear:both;text-align:center;"><font color="white">
