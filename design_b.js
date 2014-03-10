@@ -653,3 +653,9 @@ $(document).ready(function() {
 		$('#alertModal').modal('toggle');
 	})
 })
+
+$(document).ready(function() {
+	$('.details').click(function() {
+		$('#detailsModal').modal('toggle');
+	})
+})
