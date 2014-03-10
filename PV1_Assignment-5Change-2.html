@@ -69,55 +69,70 @@ $(document).ready(function() {
           </ul>
         </div>
 		
-			   <div id = "Page_content" style="float:left; width:89%; height:630px;">
-			   <P><h2><b>Conflict Details</b></h2></P>
-               <P><b>Friday - January 24th 2014</b></P>			   
+			   <div id = "Page_content" style="float:left; width:89%; height:900px;">
+			   <P><h2><b><u>Assignment 5</b></u></h2></P> 
 <!--    <div class="deck-screen-left">
 						<canvas id="canvas" height="200" width="400"></canvas>
 				<br>
 			</div>
 </div> -->
-<table border="1" style="width:60%" align="center">
-<tr align="center">
-  <td><b>Conflicting Course</b></td>
-  <td><b>Item Name</b></td>
-  <td><b>% of Students with this Conflict</b></td>		
+<div id="mytables">
+<table style="width:100%" align="center">
+<tr>
+  <td><b><u><font color="black">Item Name</font></u></b></td>
+  <td><b><u><font color="black">% of Students with Conflicts</font></u></b></td>
+  <td><b><u><font color="black">Date</font></u></b></td>
+  <td><b><u><font color="black"></font></u></b></td>
   </tr>
-     <tr align="center">
-  <td>MATH 101</td>
-  <td>Midterm 1</td>	
-  <td>56%</td>  
+<tr>
+  <td><a href="PV1_Exams-M1Details.html"><b><font color="black">Assignment 5</font></b></a></td>
+  <td><span style="background-color:Green"><font color="white">0%</font></span></td>		
+  <td>March 2 2014</td>
+<td><form action="PV1_Assignment-V2.html">
+    <input type="submit" value="Save Changes"></form></td>
   </tr>
-<tr align="center">
-  <td>CPSC 121</td>
-  <td>Assignment 1</td>	
-  <td>40%</td>  
-  </tr>
-    <tr align="center">
-  <td>BIOL 121</td>
-  <td>Assignment 3</td>	
-  <td>23%</td>  
-  </tr>
- <tr align="center">
-  <td>MATH 100</td>
-  <td>Quiz 2</td>	
-  <td>20%</td>  
-  </tr>
-  <tr align="center">
-  <td>ENG 110</td>
-  <td>Term Paper</td>	
-  <td>10%</td>  
-  </tr>
-   <tr align="center">
-  <td>ASTR 102</td>
-  <td>Lab Assignment 3</td>	
-  <td>7%</td>  
-  </tr>
+  <tr>
+<td><font color="white">.</font></td>
+ <td><font color="white">.</font></td>
+</tr>
 </table>
-<p><b>Total Number of Students in the course with these conflicts: <i><font color="red">61%</font></i></b></P>
-<form action="PV1_Exams-Midterm1.html">
-    <input type="submit" value="Back to Date Change Graph">
-</form>
+</div>
+<P><i>Click on a bar in the bar graph to view Conflict Details for the selected day</i></P>
+<img src="./images/444graph2.JPG" alt="info_text1" width = "990px" height = "400px" usemap ="#graphmap">
+<map name="graphmap">
+ <area shape="rect" coords="110,20,150,400" alt="Sunday" href="PV1_Assignment-Sunday.html">
+ <area shape="rect" coords="240,20,280,400" alt="Monday" href="PV1_Assignment-Monday.html">
+ <area shape="rect" coords="370,20,410,400" alt="Tuesday" href="PV1_Assignment-Tuesday.html">
+ <area shape="rect" coords="500,20,540,400" alt="Wednesday" href="PV1_Assignment-Wednesday.html">
+ <area shape="rect" coords="632,20,672,400" alt="Thursday" href="PV1_Assignment-Thursday.html">
+ <area shape="rect" coords="762,20,802,400" alt="Friday" href="PV1_Assignment-Friday.html">
+ <area shape="rect" coords="894,20,934,400" alt="Saturday" href="PV1_Assignment-Saturday.html">
+</map> 
+<table style="width:100%" align="center">
+<tr>
+<td><font color="white">...........</font></td>
+<td><form action="#"><input type="submit" value="&larr;" onclick="alert('Go to the week before')"></form></td>
+<td><font color="white">..</font></td>
+<td><form action="#"><input type="submit" value="Feb 23" onclick="alert('Changed Date of Assignment 5 to Feb 23')"></form></td>
+<td><font color="white">..</font></td>
+<td><form action="#"><input type="submit" value="Feb 24" onclick="alert('Changed Date of Assignment 5 to Feb 24')"></form></td>
+<td><font color="white">....</font></td>
+<td><form action="#"><input type="submit" value="Feb 25" onclick="alert('Changed Date of Assignment 5 to Feb 25')"></form></td>
+<td><font color="white">...</font></td>
+<td><form action="#"><input type="submit" value="Feb 26" onclick="alert('Changed Date of Assignment 5 to Feb 26')"></form></td>
+<td><font color="white">..</font></td>
+<td><form action="#"><input type="submit" value="Feb 27" onclick="alert('Changed Date of Assignment 5 to Feb 27')"></form></td>
+<td><font color="white">...</font></td>
+<td><form action="#"><input type="submit" value="Feb 28" onclick="alert('Changed Date of Assignment 5 to Feb 28')"></form></td>
+<td><font color="white">..</font></td>
+<td><form action="#"><input type="submit" value="Feb 29" onclick="alert('Changed Date of Assignment 5 to Feb 29')"></form></td>
+<td><form action="#"><input type="submit" value="&rarr;" onclick="alert('Go to the next week')"></form></td>
+  </tr>
+  <tr>
+<td><font color="white">.</font></td>
+ <td><font color="white">.</font></td>
+</tr>
+</table>
 </div>
 
 <div id="footer_2" style="background-color:#000000;clear:both;text-align:center;"><font color="white">
