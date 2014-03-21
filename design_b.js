@@ -919,7 +919,7 @@ $(document).ready(function() {
 	$('.newM2Date').click(function() {
 		$('#M2-date').empty().append('11:00AM - Wednesday, February 5, 2014');
 		$('#M2-conflict').empty().append('4%');
-		$('.alert-modal-body').empty().append('Midterm 1 date successfully changed to 11:00AM - February 5, 2014');
+		$('.alert-modal-body').empty().append('Midterm 2 date successfully changed to 11:00AM - February 5, 2014');
 		$('#calendar-feb').fullCalendar('removeEvents', 'M2');
 		var changedEvent = {
 				id:'M2',
@@ -937,7 +937,7 @@ $(document).ready(function() {
 	$('.newM3Date').click(function() {
 		$('#M3-date').empty().append('11:00AM - Tuesday, February 18, 2014');
 		$('#M3-conflict').empty().append('5%');
-		$('.alert-modal-body').empty().append('Midterm 1 date successfully changed to 11:00AM - February 18, 2014');
+		$('.alert-modal-body').empty().append('Midterm 3 date successfully changed to 11:00AM - February 18, 2014');
 		$('#calendar-feb').fullCalendar('removeEvents', 'M3');
 		var changedEvent = {
 				id:'M3',
@@ -955,7 +955,7 @@ $(document).ready(function() {
 	$('.newM4Date').click(function() {
 		$('#M4-date').empty().append('11:00AM - Thursday, March 6, 2014');
 		$('#M4-conflict').empty().append('6%');
-		$('.alert-modal-body').empty().append('Midterm 1 date successfully changed to 11:00AM - March 6, 2014');
+		$('.alert-modal-body').empty().append('Midterm 4 date successfully changed to 11:00AM - March 6, 2014');
 		$('#calendar-mar').fullCalendar('removeEvents', 'M4');
 		var changedEvent = {
 				id:'M4',
