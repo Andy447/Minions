@@ -331,46 +331,7 @@ $(document).ready(function() {
 	  }]
 	 }
 	});
-	$("#jan17chart").chart({
-	 template : "pie_basic_1",
-	 values : {
-	  serie1 : [61, 39]
-	 },
-	 tooltips : {
-	  serie1 : ["61% busy", "39% free"]
-	 },
-	 defaultSeries : {
-	  values : [{
-	   plotProps : {
-	    fill : "#FF1212"
-	   }
-	  }, {
-	   plotProps : {
-	    fill : "#335CFF"
-	   }
-	  }]
-	 }
-	});
-	$("#jan18chart").chart({
-	 template : "pie_basic_1",
-	 values : {
-	  serie1 : [0,100]
-	 },
-	 tooltips : {
-	  serie1 : ["0% busy", "100% free"]
-	 },
-	 defaultSeries : {
-	  values : [{
-	   plotProps : {
-	    fill : "#FF1212"
-	   }
-	  }, {
-	   plotProps : {
-	    fill : "#335CFF"
-	   }
-	  }]
-	 }
-	});
+	
 	$("#jan19chart").chart({
 	 template : "pie_basic_1",
 	 values : {
@@ -414,7 +375,7 @@ $(document).ready(function() {
 	$("#jan21chart").chart({
 	 template : "pie_basic_1",
 	 values : {
-	  serie1 : [55,45]
+	  serie1 : [28,72]
 	 },
 	 tooltips : {
 	  serie1 : ["55% busy", "45% free"]
@@ -434,10 +395,10 @@ $(document).ready(function() {
 	$("#jan22chart").chart({
 	 template : "pie_basic_1",
 	 values : {
-	  serie1 : [0,100]
+	  serie1 : [3,97]
 	 },
 	 tooltips : {
-	  serie1 : ["0 busy", "100% free"]
+	  serie1 : ["3% busy", "97% free"]
 	 },
 	 defaultSeries : {
 	  values : [{
@@ -454,10 +415,70 @@ $(document).ready(function() {
 	$("#jan23chart").chart({
 	 template : "pie_basic_1",
 	 values : {
-	  serie1 : [45, 55]
+	  serie1 : [31, 69]
 	 },
 	 tooltips : {
-	  serie1 : ["45% busy", "55% free"]
+	  serie1 : ["31% busy", "69% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+	$("#jan24chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [61, 39]
+	 },
+	 tooltips : {
+	  serie1 : ["61% busy", "39% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+	$("#jan25chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [0,100]
+	 },
+	 tooltips : {
+	  serie1 : ["0% busy", "100% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+	$("#feb2chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [0, 100]
+	 },
+	 tooltips : {
+	  serie1 : ["0% busy", "100% free"]
 	 },
 	 defaultSeries : {
 	  values : [{
@@ -572,26 +593,6 @@ $(document).ready(function() {
 	 }
 	});
 	$("#feb8chart").chart({
-	 template : "pie_basic_1",
-	 values : {
-	  serie1 : [0, 100]
-	 },
-	 tooltips : {
-	  serie1 : ["0% busy", "100% free"]
-	 },
-	 defaultSeries : {
-	  values : [{
-	   plotProps : {
-	    fill : "#FF1212"
-	   }
-	  }, {
-	   plotProps : {
-	    fill : "#335CFF"
-	   }
-	  }]
-	 }
-	});
-	$("#feb9chart").chart({
 	 template : "pie_basic_1",
 	 values : {
 	  serie1 : [0, 100]
@@ -751,6 +752,26 @@ $(document).ready(function() {
 	  }]
 	 }
 	});
+	$("#mar2chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [0, 100]
+	 },
+	 tooltips : {
+	  serie1 : ["0% busy", "100% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
 	$("#mar3chart").chart({
 	 template : "pie_basic_1",
 	 values : {
@@ -871,26 +892,7 @@ $(document).ready(function() {
 	  }]
 	 }
 	});
-	$("#mar9chart").chart({
-	 template : "pie_basic_1",
-	 values : {
-	  serie1 : [0, 100]
-	 },
-	 tooltips : {
-	  serie1 : ["0% busy", "100% free"]
-	 },
-	 defaultSeries : {
-	  values : [{
-	   plotProps : {
-	    fill : "#FF1212"
-	   }
-	  }, {
-	   plotProps : {
-	    fill : "#335CFF"
-	   }
-	  }]
-	 }
-	});
+
 
 })
 
@@ -898,7 +900,7 @@ $(document).ready(function() {
 $(document).ready(function() {
 	$('.newM1Date').click(function() {
 		$('#M1-date').empty().append('11:00AM - Wednesday, January 22nd, 2014');
-		$('#M1-conflict').empty().append('0%');
+		$('#M1-conflict').empty().append('3%');
 		$('.alert-modal-body').empty().append('Midterm 1 date successfully changed to 11:00AM - January 22nd, 2014');
 		$('#calendar-jan').fullCalendar('removeEvents', 'M1');
 		var changedEvent = {
