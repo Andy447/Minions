@@ -90,13 +90,15 @@ legend configurations
 .legend-conflicts {
 	border: 1px solid #FF1212;
 	background-color: #FF1212;
-	width: 100px;
+	width: 200px;
+	margin: 5px;
 }
 
 .legend-noconflicts {
 	border: 1px solid #335CFF;
 	background-color: #335CFF;
-	width: 100px;
+	width: 200px;
+	margin: 5px;
 }
 /*------------------------------------------------------------------------
 Tab pane customizations
