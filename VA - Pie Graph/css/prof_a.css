@@ -1,0 +1,43 @@
+html {
+  font-family: sans-serif;
+  height: 100%;
+  margin: 0;
+}
+body {
+	height: 100%;
+   margin: 0;
+}
+
+#Page_content{
+	display:block;
+    width:100%;
+    height:100%; 
+}
+#mysidebar{
+	background-color: #009933;
+	border-style:solid;
+	border-color:#00FF00;
+}
+
+#active2{
+	color:blue;
+}
+
+#myHeader {
+	background-image:url(header.jpg);
+}
+
+.nav2 > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 10px;
+  border-style:solid;
+  background-color: #009933;
+  font-weight:bold;
+  color:white;
+}
+.nav2 {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
