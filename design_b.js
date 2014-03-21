@@ -914,6 +914,7 @@ $(document).ready(function() {
 		}
 		$('#calendar-jan').fullCalendar('renderEvent', changedEvent);
 		$('#alertModal').modal('toggle');
+		$('#collapseOne').collapse('hide');
 	});
 	$('.newM2Date').click(function() {
 		$('#M2-date').empty().append('11:00AM - Wednesday, February 5, 2014');
@@ -931,6 +932,7 @@ $(document).ready(function() {
 		}
 		$('#calendar-feb').fullCalendar('renderEvent', changedEvent);
 		$('#alertModal').modal('toggle');
+		$('#collapseTwo').collapse('hide');
 	});
 	$('.newM3Date').click(function() {
 		$('#M3-date').empty().append('11:00AM - Tuesday, February 18, 2014');
@@ -948,6 +950,7 @@ $(document).ready(function() {
 		}
 		$('#calendar-feb').fullCalendar('renderEvent', changedEvent);
 		$('#alertModal').modal('toggle');
+		$('#collapseThree').collapse('hide');
 	});
 	$('.newM4Date').click(function() {
 		$('#M4-date').empty().append('11:00AM - Thursday, March 6, 2014');
@@ -965,6 +968,7 @@ $(document).ready(function() {
 		}
 		$('#calendar-mar').fullCalendar('renderEvent', changedEvent);
 		$('#alertModal').modal('toggle');
+		$('#collapseFour').collapse('hide');
 	});
 })
 

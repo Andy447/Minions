@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml' >
+<head>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Professor Landing Page</title>
+    <link type='text/css' rel='StyleSheet' href='design_b.css'>
+    <link type='text/css' rel='StyleSheet' href='bootstrap/css/bootstrap.css'>
+    <link type='text/css' rel='StyleSheet' href='jquery.bxslider/jquery.bxslider.css'>
+    <link type='text/css' rel='StyleSheet' href='http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.css'>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script>
+    <script type='text/javascript' src='jquery.bxslider/jquery.bxslider.js'></script>
+    <script type='text/javascript' src='bootstrap/js/bootstrap.js'></script>
+    <script type='text/javascript' src='design_b.js'></script>
+ 	<script src="raphael.js" type="text/javascript"></script>
+  	<script src="elycharts.js" type="text/javascript"></script>
+  	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.min.js'></script>
+</head>
+<body>
+<nav class='navbar navbar-inverse' role='navigation'>
+  <div class='container-fluid'>
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class='navbar-header'>
+      <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#bs-example-navbar-collapse-1'>
+        <span class='sr-only'>Toggle navigation</span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <a class='navbar-brand' href='#'>Deadline Management System</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
+      <ul class='nav navbar-nav navbar-right'>
+      <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">CPSC 110 <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">CPSC 110</a></li>
+            <li><a href="#">CPSC 121</a></li>
+            <li><a href="#">CPSC 344</a></li>
+          </ul>
+        </li>
+        <li><a href='#'>Profile</a></li>
+        <li><a href='#'>Settings</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class='container'>
+	<div class='row'>
+		<div class='col-md-2'>
+			<h2>Calendar</h2>
+		</div>
+	</div>
+	<div class='row'>
+		<div class='col-md-12'>
+			<div class='legend-item'>
+				<div class='legend-midterms'>Midterms</div>
+			</div>
+			<div class='legend-item'>
+				<div class='legend-assignments'>Assignments</div>
+			</div>
+			<div class='legend-item'>
+				<div class='legend-labs'>Labs</div>
+			</div>
+			<div class='legend-item'>
+				<div class='legend-events'>Events</div>
+			</div>
+		</div>
+	</div>
+	<div class='row'>
+		<div class='col-md-12'>
+			<div class='legend-item'>
+				<div class='legend-warning'>% of class with conflicts
+					<button id='conflict-info' type="button" class="btn btn-link" data-container="body" data-toggle="popover" data-placement="top" data-content="A conflict occurs when a student that is currently in your class has another midterm, quiz, assignment or coursework  from another course scheduled on the same day as a currently scheduled exam or assignment">
+					      What is a conflict?
+					</button>
+				</div>
+			</div>
+			<div class='legend-item'>
+				<div class='legend-generic'>! = 10% - 20%</div>
+			</div>
+			<div class='legend-item'>
+				<div class='legend-generic'>!! = 21% - 30%</div>
+			</div>
+			<div class='legend-item'>
+				<div class='legend-generic'>!!! = over 30%</div> 
+			</div>
+		</div>
+	</div>	
+</div>
+
+<div class='container calendar-widget'>
+	<div class='row'>
+		<div class='col-md-12'>
+			<div class='calendar-container'>
+				<div id='calendar-jan' class='calendar-content calendar'>
+				</div>
+				<div id='calendar-feb' class='calendar-content calendar'>
+				</div>
+				<div id='calendar-mar' class='calendar-content calendar'>
+				</div>
+				<div id='calendar-apr' class='calendar-content calendar'>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='row'>
+		<div class='col-md-12'>
+			<div class ='calendar-controls'>
+				<span id='slider-left' class='glyphicon glyphicon-circle-arrow-left' style='font-size:36px;'></span> <span id='slider-right' class='glyphicon glyphicon-circle-arrow-right' style='font-size:36px;'></span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class='container content'>
+	<div class='row'>
+		<div class='col-md-12'>
+			<div>
+				<ul class='nav nav-tabs' id='myTab'>
+				  <li class='active'><a href='#exams' data-toggle='tab'>Exams and Quizzes</a></li>
+				  <li><a href='#assignments' data-toggle='tab'>Assignments</a></li>
+				  <li><a href='#labs' data-toggle='tab'>Labs</a></li>
+				  <li><a href='#events' data-toggle='tab'>Events</a></li>
+				</ul>
+
+				<div class='tab-content'>
+				  <div class='tab-pane active' id='exams'>
+				  	<button id='create-new-exam' type='button' class='btn btn-primary'><span class='glyphicon glyphicon-plus'></span>Add new exam</button>
+					<div class="panel-group" id="accordion">
+					  	<div class="panel panel-default">
+						    <div class="panel-heading">
+						      	<h4 class="panel-title">
+						      		<table class='table-custom'>
+							      		<tr>
+							      			<td class='cell-exam-title'>Exam/Quizzes</td>
+							      			<td class='cell-exam-conflicts'>% of Students with Conflicts</td>
+							      			<td class='cell-exam-date'>Time and Date</td>
+							      			<td class='cell-exam-datechange'>Change Date</td>
+							      			<td class='cell-exam-delete'>Delete</td>
+							      		<tr>
+						      		</table>
+						      	</h4>
+						    </div>
+					 	</div>
+					  	<div id='M1' class="panel panel-default">
+						    <div class="panel-heading">
+						        <table class='table-custom'>
+						      		<tr>
+						      			<td class='cell-exam-title'><button class='btn btn-link'>Midterm 1</button></td>
+						      			<td id='M1-conflict' class='cell-exam-conflicts'>40%</td>
+						      			<td id='M1-date' class='cell-exam-date'>11:00AM - Monday, January 20, 2014</td>
+						      			<td class='cell-exam-datechange'><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Change date</a></td>
+						      			<td class='cell-exam-delete'>Delete</td>
+						      		<tr>
+						      	</table>
+						    </div>
+					    	<div id="collapseOne" class="panel-collapse collapse">
+						        <div class="panel-body">
+						        	<table>
+						        		<tr>
+						        			<td><div class='legend-conflicts'>% of class with conflicts</div></td>
+						        			<td><div class='legend-noconflicts'>% of class with no conflicts</div></td>
+						        		</tr>
+						        	</table>
+						        	<div class='date-chooser'>
+
+						        		
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Sun, January 19</th></tr>
+							        		<tr><td><div id='jan19chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Mon, January 20</th></tr>
+							        		<tr><td><div id='jan20chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Tues, January 21</th></tr>
+							        		<tr><td><div id='jan21chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Wed, January 22</th></tr>
+							        		<tr><td><div id='jan22chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select newM1Date'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Thurs, January 23</th></tr>
+							        		<tr><td><div id='jan23chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Fri, January 24</th></tr>
+							        		<tr><td><div id='jan24chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Sat, January 25</th></tr>
+							        		<tr><td><div id='jan25chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						      	    </div>
+						      	    <table class='week-prev-next'>
+						      	    	<tr>
+						      	    		<td><button class='btn btn-default'>Prev</button><button class='btn btn-default'>Next</button></td>
+						      	    	</tr>
+						      	    </table>
+						        </div>
+					    	</div>
+					  	</div>
+					  	<div id='M2' class="panel panel-default">
+						    <div class="panel-heading">
+						        <table class='table-custom'>
+						      		<tr>
+						      			<td class='cell-exam-title'><button class='btn btn-link'>Midterm 2</button></td>
+						      			<td id='M2-conflict' class='cell-exam-conflicts'>66%</td>
+						      			<td id='M2-date' class='cell-exam-date'>11:00AM - Friday, Feb 7, 2014</td>
+						      			<td class='cell-exam-datechange'><a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Change date</a></td>
+						      			<td class='cell-exam-delete'>Delete</td>
+						      		<tr>
+						      	</table>
+						    </div>
+					    	<div id="collapseTwo" class="panel-collapse collapse">
+						        <div class="panel-body">
+						        	<table>
+						        		<tr>
+						        			<td><div class='legend-conflicts'>% of class with conflicts</div></td>
+						        			<td><div class='legend-noconflicts'>% of class with no conflicts</div></td>
+						        		</tr>
+						        	</table>
+						        	<div class='date-chooser'>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Sun, February 2</th></tr>
+							        		<tr><td><div id='feb2chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Mon, February 3</th></tr>
+							        		<tr><td><div id='feb3chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Tues, February 4</th></tr>
+							        		<tr><td><div id='feb4chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Wed, February 5</th></tr>
+							        		<tr><td><div id='feb5chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select newM2Date'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Thurs, February 6</th></tr>
+							        		<tr><td><div id='feb6chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Fri, February 7</th></tr>
+							        		<tr><td><div id='feb7chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Sat, February 8</th></tr>
+							        		<tr><td><div id='feb8chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+
+						      	    </div>
+						      	    <table class='week-prev-next'>
+						      	    	<tr>
+						      	    		<td><button class='btn btn-default'>Prev</button><button class='btn btn-default'>Next</button></td>
+						      	    	</tr>
+						      	    </table>
+						        </div>
+					    	</div>
+					  	</div>
+					  	<div id='M3' class="panel panel-default">
+						    <div class="panel-heading">
+						        <table class='table-custom'>
+						      		<tr>
+						      			<td class='cell-exam-title'><button class='btn btn-link'>Midterm 3</button></td>
+						      			<td id='M3-conflict' class='cell-exam-conflicts'>50%</td>
+						      			<td id='M3-date' class='cell-exam-date'>11:00AM - Monday, Feb 17, 2014</td>
+						      			<td class='cell-exam-datechange'><a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Change date</a></td>
+						      			<td class='cell-exam-delete'>Delete</td>
+						      		<tr>
+						      	</table>
+						    </div>
+					    	<div id="collapseThree" class="panel-collapse collapse">
+						        <div class="panel-body">
+						        	<table>
+						        		<tr>
+						        			<td><div class='legend-conflicts'>% of class with conflicts</div></td>
+						        			<td><div class='legend-noconflicts'>% of class with no conflicts</div></td>
+						        		</tr>
+						        	</table>
+						        	<div class='date-chooser'>
+
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Sun, February 16</th></tr>
+							        		<tr><td><div id='feb16chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Mon, February 17</th></tr>
+							        		<tr><td><div id='feb17chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Tues, February 18</th></tr>
+							        		<tr><td><div id='feb18chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select newM3Date'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Wed, February 19</th></tr>
+							        		<tr><td><div id='feb19chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Thurs, February 20</th></tr>
+							        		<tr><td><div id='feb20chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Fri, February 21</th></tr>
+							        		<tr><td><div id='feb21chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Sat, February 22</th></tr>
+							        		<tr><td><div id='feb22chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						      	    </div>
+						      	    <table class='week-prev-next'>
+						      	    	<tr>
+						      	    		<td><button class='btn btn-default'>Prev</button><button class='btn btn-default'>Week</button></td>
+						      	    	</tr>
+						      	    </table>
+						        </div>
+					    	</div>
+					  	</div>
+					  	<div id='M4' class="panel panel-default">
+						    <div class="panel-heading">
+						        <table class='table-custom'>
+						      		<tr>
+						      			<td class='cell-exam-title'><button class='btn btn-link'>Midterm 4</button></td>
+						      			<td id='M4-conflict' class='cell-exam-conflicts'>80%</td>
+						      			<td id='M4-date' class='cell-exam-date'>11:00AM - Wednesday, Mar 5, 2014</td>
+						      			<td class='cell-exam-datechange'><a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Change date</a></td>
+						      			<td class='cell-exam-delete'>Delete</td>
+						      		<tr>
+						      	</table>
+						    </div>
+					    	<div id="collapseFour" class="panel-collapse collapse">
+						        <div class="panel-body">
+						        	<table>
+						        		<tr>
+						        			<td><div class='legend-conflicts'>% of class with conflicts</div></td>
+						        			<td><div class='legend-noconflicts'>% of class with no conflicts</div></td>
+						        		</tr>
+						        	</table>
+						        	<div class='date-chooser'>
+
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Sun, March 2</th></tr>
+							        		<tr><td><div id='mar2chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Mon, March 3</th></tr>
+							        		<tr><td><div id='mar3chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Tues, March 4</th></tr>
+							        		<tr><td><div id='mar4chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Wed, March 5</th></tr>
+							        		<tr><td><div id='mar5chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Thurs, March 6</th></tr>
+							        		<tr><td><div id='mar6chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select newM4Date'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Fri, March 7</th></tr>
+							        		<tr><td><div id='mar7chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Sat, March 8</th></tr>
+							        		<tr><td><div id='mar8chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		
+						      	    </div>
+						      	    <table class='week-prev-next'>
+						      	    	<tr>
+						      	    		<td><button class='btn btn-default'>Prev</button><button class='btn btn-default'>Next</button></td>
+						      	    	</tr>
+						      	    </table>
+						        </div>
+					    	</div>
+					  	</div>
+					</div>
+				  </div>
+				  <div class='tab-pane' id='assignments'>
+				  	<button id='create-new-assignment' type='button' class='btn btn-primary'><span class='glyphicon glyphicon-plus'></span>Add new assignment</button>
+					<div class="panel-group" id="accordion">
+					  	<div class="panel panel-default">
+						    <div class="panel-heading">
+						      	<h4 class="panel-title">
+						      		<table class='table-custom'>
+							      		<tr>
+							      			<td class='cell-exam-title'>Assignment</td>
+							      			<td class='cell-exam-conflicts'>% of Students with Conflicts</td>
+							      			<td class='cell-exam-date'>Time and Date</td>
+							      			<td class='cell-exam-datechange'>Change Date</td>
+							      			<td class='cell-exam-delete'>Delete</td>
+							      		<tr>
+						      		</table>
+						      	</h4>
+						    </div>
+					 	</div>
+					  	<div id='A1' class="panel panel-default">
+						    <div class="panel-heading">
+						        <table class='table-custom'>
+						      		<tr>
+						      			<td class='cell-exam-title'><button class='btn btn-link'>Assignment 1</button></td>
+						      			<td class='cell-exam-conflicts'>5%</td>
+						      			<td id='M1-date' class='cell-exam-date'>11:00AM - Sunday, January 5, 2014</td>
+						      			<td class='cell-exam-datechange'><a data-toggle="collapse" data-parent="#accordion" href="#assignmentCollapseOne">Change date</a></td>
+						      			<td class='cell-exam-delete'>Delete</td>
+						      		<tr>
+						      	</table>
+						    </div>
+					    	<div id="assignmentCollapseOne" class="panel-collapse collapse">
+						        <div class="panel-body">
+						        	<table>
+						        		<tr>
+						        			<td><div class='legend-conflicts'>% of class with conflicts</div></td>
+						        			<td><div class='legend-noconflicts'>% of class with no conflicts</div></td>
+						        		</tr>
+						        	</table>
+						        	<div class='date-chooser'>
+
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Mon, January 6</th></tr>
+							        		<tr><td><div class='generic_pie_1 pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Tues, January 7</th></tr>
+							        		<tr><td><div class='generic_pie_2 pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Wed, January 8</th></tr>
+							        		<tr><td><div class='generic_pie_3 pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button id='2014-01-22' class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Thurs, January 9</th></tr>
+							        		<tr><td><div class='generic_pie_4 pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Fri, January 10</th></tr>
+							        		<tr><td><div class='generic_pie_4, pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Sat, January 11</th></tr>
+							        		<tr><td><div class='generic_pie_4, pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Sun, January 12</th></tr>
+							        		<tr><td><div class='generic_pie_3, pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						      	    </div>
+						      	    <table class='week-prev-next'>
+						      	    	<tr>
+						      	    		<td><button class='btn btn-default'>Prev</button><button class='btn btn-default'>Next</button></td>
+						      	    	</tr>
+						      	    </table>
+						        </div>
+					    	</div>
+					  	</div>
+					  	<div id='A2' class="panel panel-default">
+						    <div class="panel-heading">
+						        <table class='table-custom'>
+						      		<tr>
+						      			<td class='cell-exam-title'><button class='btn btn-link'>Assignment 2</button></td>
+						      			<td class='cell-exam-conflicts'>20%</td>
+						      			<td id='M1-date' class='cell-exam-date'>11:00AM - Sunday, January 19, 2014</td>
+						      			<td class='cell-exam-datechange'><a data-toggle="collapse" data-parent="#accordion" href="#assignmentCollapseTwo">Change date</a></td>
+						      			<td class='cell-exam-delete'>Delete</td>
+						      		<tr>
+						      	</table>
+						    </div>
+					    	<div id="assignmentCollapseTwo" class="panel-collapse collapse">
+						        <div class="panel-body">
+						        	<table>
+						        		<tr>
+						        			<td><div class='legend-conflicts'>% of class with conflicts</div></td>
+						        			<td><div class='legend-noconflicts'>% of class with no conflicts</div></td>
+						        		</tr>
+						        	</table>
+						        	<div class='date-chooser'>
+
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Mon, January 20</th></tr>
+							        		<tr><td><div id='jan20chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Tues, January 21</th></tr>
+							        		<tr><td><div id='jan21chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Wed, January 22</th></tr>
+							        		<tr><td><div id='jan22chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button id='2014-01-22' class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Thurs, January 23</th></tr>
+							        		<tr><td><div id='jan23chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Fri, January 24</th></tr>
+							        		<tr><td><div id='jan24chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Sat, January 25</th></tr>
+							        		<tr><td><div id='jan25chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Sun, January 26</th></tr>
+							        		<tr><td><div id='jan26chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						      	    </div>
+						      	    <table class='week-prev-next'>
+						      	    	<tr>
+						      	    		<td><button class='btn btn-default'>Prev</button><button class='btn btn-default'>Next</button></td>
+						      	    	</tr>
+						      	    </table>
+						        </div>
+					    	</div>
+					  	</div>
+					  	<div id='A3' class="panel panel-default">
+						    <div class="panel-heading">
+						        <table class='table-custom'>
+						      		<tr>
+						      			<td class='cell-exam-title'><button class='btn btn-link'>Assignment 3</button></td>
+						      			<td class='cell-exam-conflicts'>20%</td>
+						      			<td id='M1-date' class='cell-exam-date'>11:00AM - Sunday, February 2, 2014</td>
+						      			<td class='cell-exam-datechange'><a data-toggle="collapse" data-parent="#accordion" href="#assignmentCollapseThree">Change date</a></td>
+						      			<td class='cell-exam-delete'>Delete</td>
+						      		<tr>
+						      	</table>
+						    </div>
+					    	<div id="assignmentCollapseThree" class="panel-collapse collapse">
+						        <div class="panel-body">
+						        	<table>
+						        		<tr>
+						        			<td><div class='legend-conflicts'>% of class with conflicts</div></td>
+						        			<td><div class='legend-noconflicts'>% of class with no conflicts</div></td>
+						        		</tr>
+						        	</table>
+						        	<div class='date-chooser'>
+
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Mon, January 20</th></tr>
+							        		<tr><td><div id='jan20chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Tues, January 21</th></tr>
+							        		<tr><td><div id='jan21chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Wed, January 22</th></tr>
+							        		<tr><td><div id='jan22chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button id='2014-01-22' class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Thurs, January 23</th></tr>
+							        		<tr><td><div id='jan23chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Fri, January 24</th></tr>
+							        		<tr><td><div id='jan24chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Sat, January 25</th></tr>
+							        		<tr><td><div id='jan25chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Sun, January 26</th></tr>
+							        		<tr><td><div id='jan26chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						      	    </div>
+						      	    <table class='week-prev-next'>
+						      	    	<tr>
+						      	    		<td><button class='btn btn-default'>Prev</button><button class='btn btn-default'>Next</button></td>
+						      	    	</tr>
+						      	    </table>
+						        </div>
+					    	</div>
+					  	</div>
+					  	<div id='A4' class="panel panel-default">
+						    <div class="panel-heading">
+						        <table class='table-custom'>
+						      		<tr>
+						      			<td class='cell-exam-title'><button class='btn btn-link'>Assignment 4</button></td>
+						      			<td class='cell-exam-conflicts'>10%</td>
+						      			<td id='M1-date' class='cell-exam-date'>11:00AM - Sunday, February 16, 2014</td>
+						      			<td class='cell-exam-datechange'><a data-toggle="collapse" data-parent="#accordion" href="#assignmentCollapseFour">Change date</a></td>
+						      			<td class='cell-exam-delete'>Delete</td>
+						      		<tr>
+						      	</table>
+						    </div>
+					    	<div id="assignmentCollapseFour" class="panel-collapse collapse">
+						        <div class="panel-body">
+						        	<table>
+						        		<tr>
+						        			<td><div class='legend-conflicts'>% of class with conflicts</div></td>
+						        			<td><div class='legend-noconflicts'>% of class with no conflicts</div></td>
+						        		</tr>
+						        	</table>
+						        	<div class='date-chooser'>
+
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Mon, January 20</th></tr>
+							        		<tr><td><div id='jan20chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Tues, January 21</th></tr>
+							        		<tr><td><div id='jan21chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Wed, January 22</th></tr>
+							        		<tr><td><div id='jan22chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button id='2014-01-22' class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Thurs, January 23</th></tr>
+							        		<tr><td><div id='jan23chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Fri, January 24</th></tr>
+							        		<tr><td><div id='jan24chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Sat, January 25</th></tr>
+							        		<tr><td><div id='jan25chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Sun, January 26</th></tr>
+							        		<tr><td><div id='jan26chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						      	    </div>
+						      	    <table class='week-prev-next'>
+						      	    	<tr>
+						      	    		<td><button class='btn btn-default'>Prev</button><button class='btn btn-default'>Next</button></td>
+						      	    	</tr>
+						      	    </table>
+						        </div>
+					    	</div>
+					  	</div>
+					  	<div id='A5' class="panel panel-default">
+						    <div class="panel-heading">
+						        <table class='table-custom'>
+						      		<tr>
+						      			<td class='cell-exam-title'><button class='btn btn-link'>Assignment 5</button></td>
+						      			<td id='A5-conflict' class='cell-exam-conflicts'>10%</td>
+						      			<td id='A5-date' class='cell-exam-date'>11:00AM - Sunday, March 2, 2014</td>
+						      			<td class='cell-exam-datechange'><a data-toggle="collapse" data-parent="#accordion" href="#assignmentCollapseFive">Change date</a></td>
+						      			<td class='cell-exam-delete'>Delete</td>
+						      		<tr>
+						      	</table>
+						    </div>
+					    	<div id="assignmentCollapseFive" class="panel-collapse collapse">
+						        <div class="panel-body">
+						        	<table>
+						        		<tr>
+						        			<td><div class='legend-conflicts'>% of class with conflicts</div></td>
+						        			<td><div class='legend-noconflicts'>% of class with no conflicts</div></td>
+						        		</tr>
+						        	</table>
+						        	<div class='date-chooser'>
+
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Thu, Februrary 27</th></tr>
+							        		<tr><td><div id='feb27chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Fri, February 28</th></tr>
+							        		<tr><td><div id='feb28chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button id='changeAssignmentDate' class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Sat, March 1</th></tr>
+							        		<tr><td><div id='mar1chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button id='2014-01-22' class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Sun, March 2</th></tr>
+							        		<tr><td><div id='mar2chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Mon, March 3</th></tr>
+							        		<tr><td><div id='mar3chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Tues, March 4</th></tr>
+							        		<tr><td><div id='mar4chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Wed, March 5</th></tr>
+							        		<tr><td><div id='mar5chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						      	    </div>
+						      	    <table class='week-prev-next'>
+						      	    	<tr>
+						      	    		<td><button class='btn btn-default'>Prev</button><button class='btn btn-default'>Next</button></td>
+						      	    	</tr>
+						      	    </table>
+						        </div>
+					    	</div>
+					  	</div>
+					  	<div id='A6' class="panel panel-default">
+						    <div class="panel-heading">
+						        <table class='table-custom'>
+						      		<tr>
+						      			<td class='cell-exam-title'><button class='btn btn-link'>Assignment 6</button></td>
+						      			<td class='cell-exam-conflicts'>16%</td>
+						      			<td id='-date' class='cell-exam-date'>11:00AM - Sunday, March 16, 2014</td>
+						      			<td class='cell-exam-datechange'><a data-toggle="collapse" data-parent="#accordion" href="#assignmentCollapseTwo">Change date</a></td>
+						      			<td class='cell-exam-delete'>Delete</td>
+						      		<tr>
+						      	</table>
+						    </div>
+					    	<div id="assignmentCollapseTwo" class="panel-collapse collapse">
+						        <div class="panel-body">
+						        	<table>
+						        		<tr>
+						        			<td><div class='legend-conflicts'>% of class with conflicts</div></td>
+						        			<td><div class='legend-noconflicts'>% of class with no conflicts</div></td>
+						        		</tr>
+						        	</table>
+						        	<div class='date-chooser'>
+
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Mon, January 20</th></tr>
+							        		<tr><td><div id='jan20chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Tues, January 21</th></tr>
+							        		<tr><td><div id='jan21chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Wed, January 22</th></tr>
+							        		<tr><td><div id='jan22chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button id='2014-01-22' class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Thurs, January 23</th></tr>
+							        		<tr><td><div id='jan23chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Fri, January 24</th></tr>
+							        		<tr><td><div id='jan24chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Sat, January 25</th></tr>
+							        		<tr><td><div id='jan25chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Sun, January 26</th></tr>
+							        		<tr><td><div id='jan26chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						      	    </div>
+						      	    <table class='week-prev-next'>
+						      	    	<tr>
+						      	    		<td><button class='btn btn-default'>Prev</button><button class='btn btn-default'>Next</button></td>
+						      	    	</tr>
+						      	    </table>
+						        </div>
+					    	</div>
+					  	</div>
+					  	<div id='A7' class="panel panel-default">
+						    <div class="panel-heading">
+						        <table class='table-custom'>
+						      		<tr>
+						      			<td class='cell-exam-title'><button class='btn btn-link'>Assignment 7</button></td>
+						      			<td class='cell-exam-conflicts'>12%</td>
+						      			<td class='cell-exam-date'>11:00AM - Sunday, March 30, 2014</td>
+						      			<td class='cell-exam-datechange'><a data-toggle="collapse" data-parent="#accordion" href="#assignmentCollapseSeven">Change date</a></td>
+						      			<td class='cell-exam-delete'>Delete</td>
+						      		<tr>
+						      	</table>
+						    </div>
+					    	<div id="assignmentCollapseSeven" class="panel-collapse collapse">
+						        <div class="panel-body">
+						        	<table>
+						        		<tr>
+						        			<td><div class='legend-conflicts'>% of class with conflicts</div></td>
+						        			<td><div class='legend-noconflicts'>% of class with no conflicts</div></td>
+						        		</tr>
+						        	</table>
+						        	<div class='date-chooser'>
+
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Mon, January 20</th></tr>
+							        		<tr><td><div id='jan20chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Tues, January 21</th></tr>
+							        		<tr><td><div id='jan21chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Wed, January 22</th></tr>
+							        		<tr><td><div id='jan22chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button id='2014-01-22' class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Thurs, January 23</th></tr>
+							        		<tr><td><div id='jan23chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Fri, January 24</th></tr>
+							        		<tr><td><div id='jan24chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Sat, January 25</th></tr>
+							        		<tr><td><div id='jan25chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						        		<table class='pie-graph-container'>
+							        		<tr><th>Sun, January 26</th></tr>
+							        		<tr><td><div id='jan26chart' class='pie-chart'></div></tr>
+							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
+							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+						        		</table>
+						      	    </div>
+						      	    <table class='week-prev-next'>
+						      	    	<tr>
+						      	    		<td><button class='btn btn-default'>Prev</button><button class='btn btn-default'>Next</button></td>
+						      	    	</tr>
+						      	    </table>
+						        </div>
+					    	</div>
+					  	</div>
+					</div>
+				  </div>
+				  <div class='tab-pane' id='labs'>There are no labs currently scheduled</div>
+				  <div class='tab-pane' id='events'>There are no events currently scheduled</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>
+<div>
+	<div id='alertModal' class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+	     	<div class="modal-header">
+	        	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        	<h4 class="modal-title" id="myModalLabel">Success</h4>
+	      	</div>
+	      	<div class="modal-body alert-modal-body">
+	      	</div>
+	      	<div class="modal-footer">
+        		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+     		</div>
+	    </div>
+	  </div>
+	</div>
+	<div id='newExamModal' class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-lg">
+	    <div class="modal-content">
+	     	<div class="modal-header">
+	        	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        	<h4 class="modal-title" id="myModalLabel">Create New Midterm</h4>
+	      	</div>
+	      	<div class="modal-body-lg">
+				<div class='col-sm-12'>
+				    <label for="examName" class="col-sm-2 control-label">Exam Name:</label>
+				    <div class="col-sm-10">
+				      <input type="title" class="form-control" id="examName" placeholder="Exam Name">
+				    </div>
+				</div>
+				<div class='col-sm-12'>
+				    <label for="midtermTime" class="col-sm-2 control-label">Time:</label>
+				    <div class="col-sm-10">
+				      <input type="time" class="form-control" id="midtermTime" placeholder="e.g. 12:00PM">
+				    </div>
+				</div>
+
+				<div class='col-sm-12'>
+				    <label for="inputPassword3" class="col-sm-2 control-label">Date:</label>
+				    <div class="col-sm-10">
+				    	<input type="text" id="datepicker" class='form-control'>
+				    </div>
+				    <div class='col-sm-2 col-sm-offset-2'>
+				    	<button class='btn btn-default'>Show conflicts</button>
+					</div>
+				</div>
+				<div class='col-sm-12'>
+				    <label for="inputPassword3" class="col-sm-2 control-label">Location:</label>
+				    <div class="col-sm-10">
+				    	<input type="text" id="location" class='form-control' placeholder='Location'>
+				    </div>
+				</div>
+				<div class='col-sm-12'>
+				    <label for="inputPassword3" class="col-sm-2 control-label">Tested Material:</label>
+				    <div class="col-sm-10">
+				    	<input type="text" id="location" class='form-control' placeholder='Material covered'>
+				    </div>
+				</div>
+				<div class='col-sm-12'>
+				    <label for="comments" class="col-sm-2 control-label">Comments:</label>
+				    <div class="col-sm-10">
+				     	<input type="comments" class="form-control" id="comments" placeholder="comments">
+				    </div>
+				</div>
+			    <div class="col-sm-offset-2 col-sm-10">
+			    	<button id='saveNewExam' class="btn btn-success">Save</button>
+			    </div>
+	      	</div>
+	    </div>
+	  </div>
+	</div>
+	<div id='detailsModal' class='modal fade bs-example-modal-lg' tabindex='-1' role='dialog' aria-labelledby='mySmallModalLabel' aria-hidden="true">
+		<div class='modal-dialog modal-lg'>
+			<div class='modal-content'>
+				<div class='modal-header'>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">January 20 conflicts</h4>
+				</div>
+				<div class='modal-body'>
+					<table class='table'>
+						<tr>
+							<th>Course</th>
+							<th>Deliverable Name</th>
+							<th>% of class with conflicts</th>
+							<th>Time</th>
+							<th>Professor</th>
+							<th>Contact</th>
+						</tr>
+						<tr>
+							<td>CPSC 121</td>
+							<td>Midterm 1</td>
+							<td>40%</td>
+							<td>11:00AM</td>
+							<td>Mr. Smith</td>
+							<td><button class='btn btn-link'>Contact</td>
+						</tr>	
+						<tr>
+							<td>MATH 100</td>
+							<td>Assignment 2</td>
+							<td>20%</td>
+							<td>5:00PM</td>
+							<td>Mrs. Rosehill</td>
+							<td><button class='btn btn-link'>Contact</td>
+						</tr>
+						<tr>
+							<td>ENG 110</td>
+							<td>Midterm 1</td>
+							<td>10%</td>
+							<td>11:00AM</td>
+							<td>Mr. Murray</td>
+							<td><button class='btn btn-link'>Contact</td>
+						</tr>					
+					</table>
+				</div>
+				<div class='modal-footer'>
+					<button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
