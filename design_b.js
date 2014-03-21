@@ -88,6 +88,26 @@ $(document).ready(function() {
             	borderColor: '#FA8A28',
             	className:'calendar-warning',
             	url: '#test'
+			},
+			{
+				id:'M2',
+				tag:'exams',
+				title: 'M2 - !!!',
+				start: '2014-02-07',
+				backgroundColor: '#5254FF',
+				borderColor: '#5254FF',
+				className:'calendar-warning',
+				url: '#test'
+			},
+			{
+				id:'M3',
+				tag:'exams',
+				title: 'M3 - !!!',
+				start: '2014-02-17',
+				backgroundColor: '#5254FF',
+				borderColor: '#5254FF',
+				className:'calendar-warning',
+				url: '#test'
 			}
 		],
 
@@ -138,6 +158,16 @@ $(document).ready(function() {
             	backgroundColor: '#FA8A28',
             	borderColor: '#FA8A28',
             	url: '#test'
+			},
+			{
+				id:'M4',
+				tag:'exams',
+				title: 'M4 - !!!',
+				start: '2014-03-05',
+				backgroundColor: '#5254FF',
+				borderColor: '#5254FF',
+				className:'calendar-warning',
+				url: '#test'
 			}
 		],
 		eventClick: function(calEvent, jsEvent, view) {
@@ -301,6 +331,27 @@ $(document).ready(function() {
 	  }]
 	 }
 	});
+	
+	$("#jan19chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [0, 100]
+	 },
+	 tooltips : {
+	  serie1 : ["0% busy", "100% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
 	$("#jan20chart").chart({
 	 template : "pie_basic_1",
 	 values : {
@@ -324,10 +375,10 @@ $(document).ready(function() {
 	$("#jan21chart").chart({
 	 template : "pie_basic_1",
 	 values : {
-	  serie1 : [20,80]
+	  serie1 : [28,72]
 	 },
 	 tooltips : {
-	  serie1 : ["20% busy", "80% free"]
+	  serie1 : ["55% busy", "45% free"]
 	 },
 	 defaultSeries : {
 	  values : [{
@@ -344,10 +395,10 @@ $(document).ready(function() {
 	$("#jan22chart").chart({
 	 template : "pie_basic_1",
 	 values : {
-	  serie1 : [0,100]
+	  serie1 : [3,97]
 	 },
 	 tooltips : {
-	  serie1 : ["0 busy", "100% free"]
+	  serie1 : ["3% busy", "97% free"]
 	 },
 	 defaultSeries : {
 	  values : [{
@@ -364,10 +415,10 @@ $(document).ready(function() {
 	$("#jan23chart").chart({
 	 template : "pie_basic_1",
 	 values : {
-	  serie1 : [45, 55]
+	  serie1 : [31, 69]
 	 },
 	 tooltips : {
-	  serie1 : ["45% busy", "55% free"]
+	  serie1 : ["31% busy", "69% free"]
 	 },
 	 defaultSeries : {
 	  values : [{
@@ -421,7 +472,7 @@ $(document).ready(function() {
 	  }]
 	 }
 	});
-	$("#jan26chart").chart({
+	$("#feb2chart").chart({
 	 template : "pie_basic_1",
 	 values : {
 	  serie1 : [0, 100]
@@ -441,13 +492,13 @@ $(document).ready(function() {
 	  }]
 	 }
 	});
-	$("#feb27chart").chart({
+	$("#feb3chart").chart({
 	 template : "pie_basic_1",
 	 values : {
-	  serie1 : [44, 56]
+	  serie1 : [72, 28]
 	 },
 	 tooltips : {
-	  serie1 : ["44% busy", "56% free"]
+	  serie1 : ["72% busy", "28% free"]
 	 },
 	 defaultSeries : {
 	  values : [{
@@ -461,13 +512,13 @@ $(document).ready(function() {
 	  }]
 	 }
 	});
-	$("#feb28chart").chart({
+	$("#feb4chart").chart({
 	 template : "pie_basic_1",
 	 values : {
-	  serie1 : [2, 98]
+	  serie1 : [58, 42]
 	 },
 	 tooltips : {
-	  serie1 : ["2% busy", "98% free"]
+	  serie1 : ["58% busy", "42% free"]
 	 },
 	 defaultSeries : {
 	  values : [{
@@ -481,7 +532,107 @@ $(document).ready(function() {
 	  }]
 	 }
 	});
-	$("#mar1chart").chart({
+	$("#feb5chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [4, 96]
+	 },
+	 tooltips : {
+	  serie1 : ["4% busy", "96% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+	$("#feb6chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [45, 55]
+	 },
+	 tooltips : {
+	  serie1 : ["45% busy", "55% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+	$("#feb7chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [66, 34]
+	 },
+	 tooltips : {
+	  serie1 : ["66% busy", "34% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+	$("#feb8chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [0, 100]
+	 },
+	 tooltips : {
+	  serie1 : ["0% busy", "100% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+	$("#feb16chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [0, 100]
+	 },
+	 tooltips : {
+	  serie1 : ["0% busy", "100% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+	$("#feb17chart").chart({
 	 template : "pie_basic_1",
 	 values : {
 	  serie1 : [50, 50]
@@ -501,13 +652,113 @@ $(document).ready(function() {
 	  }]
 	 }
 	});
+	$("#feb18chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [5, 95]
+	 },
+	 tooltips : {
+	  serie1 : ["5% busy", "95% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+	$("#feb19chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [66, 34]
+	 },
+	 tooltips : {
+	  serie1 : ["66% busy", "34% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+	$("#feb20chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [35, 65]
+	 },
+	 tooltips : {
+	  serie1 : ["35% busy", "65% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+	$("#feb21chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [80, 55]
+	 },
+	 tooltips : {
+	  serie1 : ["80% busy", "55% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+	$("#feb22chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [0, 100]
+	 },
+	 tooltips : {
+	  serie1 : ["0% busy", "100% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
 	$("#mar2chart").chart({
 	 template : "pie_basic_1",
 	 values : {
-	  serie1 : [40, 60]
+	  serie1 : [0, 100]
 	 },
 	 tooltips : {
-	  serie1 : ["40% busy", "60% free"]
+	  serie1 : ["0% busy", "100% free"]
 	 },
 	 defaultSeries : {
 	  values : [{
@@ -522,6 +773,46 @@ $(document).ready(function() {
 	 }
 	});
 	$("#mar3chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [38, 62]
+	 },
+	 tooltips : {
+	  serie1 : ["38% busy", "62% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+	$("#mar4chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [50, 50]
+	 },
+	 tooltips : {
+	  serie1 : ["50% busy", "50% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+	$("#mar5chart").chart({
 	 template : "pie_basic_1",
 	 values : {
 	  serie1 : [80, 20]
@@ -541,13 +832,13 @@ $(document).ready(function() {
 	  }]
 	 }
 	});
-	$("#mar4chart").chart({
+	$("#mar6chart").chart({
 	 template : "pie_basic_1",
 	 values : {
-	  serie1 : [45, 55]
+	  serie1 : [6, 94]
 	 },
 	 tooltips : {
-	  serie1 : ["45% busy", "55% free"]
+	  serie1 : ["6% busy", "94% free"]
 	 },
 	 defaultSeries : {
 	  values : [{
@@ -561,13 +852,13 @@ $(document).ready(function() {
 	  }]
 	 }
 	});
-	$("#mar5chart").chart({
+	$("#mar7chart").chart({
 	 template : "pie_basic_1",
 	 values : {
-	  serie1 : [45, 55]
+	  serie1 : [90, 10]
 	 },
 	 tooltips : {
-	  serie1 : ["45% busy", "55% free"]
+	  serie1 : ["90% busy", "10% free"]
 	 },
 	 defaultSeries : {
 	  values : [{
@@ -581,14 +872,35 @@ $(document).ready(function() {
 	  }]
 	 }
 	});
+	$("#mar8chart").chart({
+	 template : "pie_basic_1",
+	 values : {
+	  serie1 : [0, 100]
+	 },
+	 tooltips : {
+	  serie1 : ["0% busy", "100% free"]
+	 },
+	 defaultSeries : {
+	  values : [{
+	   plotProps : {
+	    fill : "#FF1212"
+	   }
+	  }, {
+	   plotProps : {
+	    fill : "#335CFF"
+	   }
+	  }]
+	 }
+	});
+
 
 })
 
-/*successfully changing the midterm date*/
+/*successfully changing the midterm dates*/
 $(document).ready(function() {
-	$('.newM1date').click(function() {
-		$('#M1-date').empty().append('11:00AM - January 22nd, 2014');
-		$('#M1-conflict').empty().append('0%');
+	$('.newM1Date').click(function() {
+		$('#M1-date').empty().append('11:00AM - Wednesday, January 22nd, 2014');
+		$('#M1-conflict').empty().append('3%');
 		$('.alert-modal-body').empty().append('Midterm 1 date successfully changed to 11:00AM - January 22nd, 2014');
 		$('#calendar-jan').fullCalendar('removeEvents', 'M1');
 		var changedEvent = {
@@ -602,7 +914,58 @@ $(document).ready(function() {
 		}
 		$('#calendar-jan').fullCalendar('renderEvent', changedEvent);
 		$('#alertModal').modal('toggle');
-	})
+	});
+	$('.newM2Date').click(function() {
+		$('#M2-date').empty().append('11:00AM - Wednesday, February 5, 2014');
+		$('#M2-conflict').empty().append('4%');
+		$('.alert-modal-body').empty().append('Midterm 1 date successfully changed to 11:00AM - February 5, 2014');
+		$('#calendar-feb').fullCalendar('removeEvents', 'M2');
+		var changedEvent = {
+				id:'M2',
+				tag:'midterms',
+				title: 'M2',
+				start: '2014-02-05',
+				backgroundColor: '#5254FF',
+				borderColor: '#5254FF',
+				url: '#test'
+		}
+		$('#calendar-feb').fullCalendar('renderEvent', changedEvent);
+		$('#alertModal').modal('toggle');
+	});
+	$('.newM3Date').click(function() {
+		$('#M3-date').empty().append('11:00AM - Tuesday, February 18, 2014');
+		$('#M3-conflict').empty().append('5%');
+		$('.alert-modal-body').empty().append('Midterm 1 date successfully changed to 11:00AM - February 18, 2014');
+		$('#calendar-feb').fullCalendar('removeEvents', 'M3');
+		var changedEvent = {
+				id:'M3',
+				tag:'midterms',
+				title: 'M3',
+				start: '2014-02-18',
+				backgroundColor: '#5254FF',
+				borderColor: '#5254FF',
+				url: '#test'
+		}
+		$('#calendar-feb').fullCalendar('renderEvent', changedEvent);
+		$('#alertModal').modal('toggle');
+	});
+	$('.newM4Date').click(function() {
+		$('#M4-date').empty().append('11:00AM - Thursday, March 6, 2014');
+		$('#M4-conflict').empty().append('6%');
+		$('.alert-modal-body').empty().append('Midterm 1 date successfully changed to 11:00AM - March 6, 2014');
+		$('#calendar-mar').fullCalendar('removeEvents', 'M4');
+		var changedEvent = {
+				id:'M4',
+				tag:'midterms',
+				title: 'M4',
+				start: '2014-03-06',
+				backgroundColor: '#5254FF',
+				borderColor: '#5254FF',
+				url: '#test'
+		}
+		$('#calendar-mar').fullCalendar('renderEvent', changedEvent);
+		$('#alertModal').modal('toggle');
+	});
 })
 
 /*adding a new midterm*/
@@ -613,8 +976,9 @@ $(document).ready(function() {
 	})
 })
 
+/*
 $(document).ready(function() {
-	$('#M2').hide();
+	//$('#M2').hide();
 	$('#saveNewExam').click(function() {
 		var newEvent = {
 				id:'M2',
@@ -632,6 +996,7 @@ $(document).ready(function() {
 		$('#M2').show();
 	})
 })
+*/
 
 /*changing assignment 5 date*/
 $(document).ready(function() {
