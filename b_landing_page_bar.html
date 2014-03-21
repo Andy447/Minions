@@ -3,7 +3,7 @@
 <head>
 	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Professor Landing Page</title>
-    <link type='text/css' rel='StyleSheet' href='design_b.css'>
+    <link type='text/css' rel='StyleSheet' href='design_b_bar.css'>
     <link type='text/css' rel='StyleSheet' href='bootstrap/css/bootstrap.css'>
     <link type='text/css' rel='StyleSheet' href='jquery.bxslider/jquery.bxslider.css'>
     <link type='text/css' rel='StyleSheet' href='http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.css'>
@@ -160,57 +160,42 @@
 						    </div>
 					    	<div id="collapseOne" class="panel-collapse collapse">
 						        <div class="panel-body">
-						        	<table>
-						        		<tr>
-						        			<td><div class='legend-conflicts'>% of class with conflicts</div></td>
-						        			<td><div class='legend-noconflicts'>% of class with no conflicts</div></td>
-						        		</tr>
-						        	</table>
-						        	<div class='date-chooser'>
-
-						        		
-						        		<table class='pie-graph-container'>
-							        		<tr><th>Sun, January 19</th></tr>
-							        		<tr><td><div id='jan19chart' class='pie-chart'></div></tr>
-							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
-						        		</table>
-						        		<table class='pie-graph-container'>
-							        		<tr><th>Mon, January 20</th></tr>
-							        		<tr><td><div id='jan20chart' class='pie-chart'></div></tr>
-							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
-						        		</table>
-						        		<table class='pie-graph-container'>
-							        		<tr><th>Tues, January 21</th></tr>
-							        		<tr><td><div id='jan21chart' class='pie-chart'></div></tr>
-							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
-						        		</table>
-						        		<table class='pie-graph-container'>
-							        		<tr><th>Wed, January 22</th></tr>
-							        		<tr><td><div id='jan22chart' class='pie-chart'></div></tr>
-							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select newM1Date'>Select</button></td></tr>
-						        		</table>
-						        		<table class='pie-graph-container'>
-							        		<tr><th>Thurs, January 23</th></tr>
-							        		<tr><td><div id='jan23chart' class='pie-chart'></div></tr>
-							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
-						        		</table>
-						        		<table class='pie-graph-container'>
-							        		<tr><th>Fri, January 24</th></tr>
-							        		<tr><td><div id='jan24chart' class='pie-chart'></div></tr>
-							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
-						        		</table>
-						        		<table class='pie-graph-container'>
-							        		<tr><th>Sat, January 25</th></tr>
-							        		<tr><td><div id='jan25chart' class='pie-chart'></div></tr>
-							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
-						        		</table>
+						        	<div>
+						        		<img src="./images/444graph.JPG" alt="info_text1" width = "990px" height = "400px" usemap ="#graphmap">
+										<map name="graphmap">
+										 <area shape="rect" coords="110,20,150,400" alt="Sunday" href="PV1_Exams-Sunday.html">
+										 <area shape="rect" coords="240,20,280,400" alt="Monday" href="PV1_Exams-Monday.html">
+										 <area shape="rect" coords="370,20,410,400" alt="Tuesday" href="PV1_Exams-Tuesday.html">
+										 <area shape="rect" coords="500,20,540,400" alt="Wednesday" href="PV1_Exams-Wednesday.html">
+										 <area shape="rect" coords="632,20,672,400" alt="Thursday" href="PV1_Exams-Thursday.html">
+										 <area shape="rect" coords="762,20,802,400" alt="Friday" href="PV1_Exams-Friday.html">
+										 <area shape="rect" coords="894,20,934,400" alt="Saturday" href="PV1_Exams-Saturday.html">
+										</map> 
+										<table style="width:100%" align="center">
+										<tr>
+										<td><font color="white">...</font></td>
+										<td><form action="#"><input type="submit" value="&larr;" onclick="alert('Go to the week before')"></form></td>
+										<td><font color="white">..</font></td>
+										<td><form action="#"><input type="submit" value="Jan 19" onclick="alert('Changed Date of Midterm 1 to Jan 19th')"></form></td>
+										<td><font color="white">..</font></td>
+										<td><form action="PV1_Exams-Midterm1.html"><input type="submit" value="Jan 20" onclick="alert('Changed Date of Midterm 1 to Jan 20th')"></form></td>
+										<td><font color="white">....</font></td>
+										<td><form action="#"><input type="submit" value="Jan 21" onclick="alert('Changed Date of Midterm 1 to Jan 21st')"></form></td>
+										<td><font color="white">...</font></td>
+										<td><form class='newM1Date'><input type="submit" value="Jan 22"></form></td>
+										<td><font color="white">..</font></td>
+										<td><form action="#"><input type="submit" value="Jan 23" onclick="alert('Changed Date of Midterm 1 to Jan 23rd')"></form></td>
+										<td><font color="white">...</font></td>
+										<td><form action="#"><input type="submit" value="Jan 24" onclick="alert('Changed Date of Midterm 1 to Jan 24th')"></form></td>
+										<td><font color="white">..</font></td>
+										<td><form action="#"><input type="submit" value="Jan 25" onclick="alert('Changed Date of Midterm 1 to Jan 25th')"></form></td>
+										<td><form action="#"><input type="submit" value="&rarr;" onclick="alert('Go to the next week')"></form></td>
+										  </tr>
+										  <tr>
+										<td><font color="white">.</font></td>
+										 <td><font color="white">.</font></td>
+										</tr>
+										</table>
 						      	    </div>
 						      	    <table class='week-prev-next'>
 						      	    	<tr>
@@ -234,57 +219,41 @@
 						    </div>
 					    	<div id="collapseTwo" class="panel-collapse collapse">
 						        <div class="panel-body">
-						        	<table>
-						        		<tr>
-						        			<td><div class='legend-conflicts'>% of class with conflicts</div></td>
-						        			<td><div class='legend-noconflicts'>% of class with no conflicts</div></td>
-						        		</tr>
-						        	</table>
-						        	<div class='date-chooser'>
-						        		<table class='pie-graph-container'>
-							        		<tr><th>Sun, February 2</th></tr>
-							        		<tr><td><div id='feb2chart' class='pie-chart'></div></tr>
-							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
-						        		</table>
-						        		<table class='pie-graph-container'>
-							        		<tr><th>Mon, February 3</th></tr>
-							        		<tr><td><div id='feb3chart' class='pie-chart'></div></tr>
-							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
-						        		</table>
-						        		<table class='pie-graph-container'>
-							        		<tr><th>Tues, February 4</th></tr>
-							        		<tr><td><div id='feb4chart' class='pie-chart'></div></tr>
-							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
-						        		</table>
-						        		<table class='pie-graph-container'>
-							        		<tr><th>Wed, February 5</th></tr>
-							        		<tr><td><div id='feb5chart' class='pie-chart'></div></tr>
-							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select newM2Date'>Select</button></td></tr>
-						        		</table>
-						        		<table class='pie-graph-container'>
-							        		<tr><th>Thurs, February 6</th></tr>
-							        		<tr><td><div id='feb6chart' class='pie-chart'></div></tr>
-							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
-						        		</table>
-						        		<table class='pie-graph-container'>
-							        		<tr><th>Fri, February 7</th></tr>
-							        		<tr><td><div id='feb7chart' class='pie-chart'></div></tr>
-							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
-						        		</table>
-						        		<table class='pie-graph-container'>
-							        		<tr><th>Sat, February 8</th></tr>
-							        		<tr><td><div id='feb8chart' class='pie-chart'></div></tr>
-							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
-						        		</table>
-
-						      	    </div>
+						        	<img src="./images/444graphM2.JPG" alt="info_text1" width = "990px" height = "400px" usemap ="#graphmap"> <!-- TODO -->
+									<map name="graphmap">
+									 <area shape="rect" coords="110,20,150,400" alt="Sunday" href="PV1_Exams-Sunday.html">
+									 <area shape="rect" coords="240,20,280,400" alt="Monday" href="PV1_Exams-Monday.html">
+									 <area shape="rect" coords="370,20,410,400" alt="Tuesday" href="PV1_Exams-Tuesday.html">
+									 <area shape="rect" coords="500,20,540,400" alt="Wednesday" href="PV1_Exams-Wednesday.html">
+									 <area shape="rect" coords="632,20,672,400" alt="Thursday" href="PV1_Exams-Thursday.html">
+									 <area shape="rect" coords="762,20,802,400" alt="Friday" href="PV1_Exams-Friday.html">
+									 <area shape="rect" coords="894,20,934,400" alt="Saturday" href="PV1_Exams-Saturday.html">
+									</map>  
+									<table style="width:100%" align="center">
+									<tr>
+									<td><font color="white">...</font></td> 
+									<td><form action="#"><input type="submit" value="&larr;" onclick="alert('Go to the week before')"></form></td> <!-- TODO -->
+									<td><font color="white">..</font></td>
+									<td><form action="#"><input type="submit" value="Feb 2" onclick="alert('Changed Date of Midterm 2 to Feb 2')"></form></td> <!-- TODO -->
+									<td><font color="white">..</font></td> 
+									<td><form action="#"><input type="submit" value="Feb 3" onclick="alert('Changed Date of Midterm 2 to Feb 3')"></form></td> <!-- TODO -->
+									<td><font color="white">....</font></td>
+									<td><form action="#"><input type="submit" value="Feb 4" onclick="alert('Changed Date of Midterm 2 to Feb 4')"></form></td> <!-- TODO -->
+									<td><font color="white">...</font></td>
+									<td><form class='newM2Date'><input type="submit" value="Feb 5"></form></td> <!-- TODO -->
+									<td><font color="white">..</font></td>
+									<td><form action="#"><input type="submit" value="Feb 6" onclick="alert('Changed Date of Midterm 2 to Feb 6')"></form></td> <!-- TODO -->
+									<td><font color="white">...</font></td>
+									<td><form action="#"><input type="submit" value="Feb 7 " onclick="alert('Changed Date of Midterm 2 to Feb 7 ')"></form></td> <!-- TODO -->
+									<td><font color="white">..</font></td>
+									<td><form action="#"><input type="submit" value="Feb 8 " onclick="alert('Changed Date of Midterm 2 to Feb 8 ')"></form></td> <!-- TODO -->
+									<td><form action="#"><input type="submit" value="&rarr;" onclick="alert('Go to the next week')"></form></td>
+									  </tr>
+									  <tr>
+									<td><font color="white">.</font></td>
+									 <td><font color="white">.</font></td>
+									</tr>
+									</table>
 						      	    <table class='week-prev-next'>
 						      	    	<tr>
 						      	    		<td><button class='btn btn-default'>Prev</button><button class='btn btn-default'>Next</button></td>
@@ -307,57 +276,41 @@
 						    </div>
 					    	<div id="collapseThree" class="panel-collapse collapse">
 						        <div class="panel-body">
-						        	<table>
-						        		<tr>
-						        			<td><div class='legend-conflicts'>% of class with conflicts</div></td>
-						        			<td><div class='legend-noconflicts'>% of class with no conflicts</div></td>
-						        		</tr>
-						        	</table>
-						        	<div class='date-chooser'>
-
-						        		<table class='pie-graph-container'>
-							        		<tr><th>Sun, February 16</th></tr>
-							        		<tr><td><div id='feb16chart' class='pie-chart'></div></tr>
-							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
-						        		</table>
-						        		<table class='pie-graph-container'>
-							        		<tr><th>Mon, February 17</th></tr>
-							        		<tr><td><div id='feb17chart' class='pie-chart'></div></tr>
-							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
-						        		</table>
-						        		<table class='pie-graph-container'>
-							        		<tr><th>Tues, February 18</th></tr>
-							        		<tr><td><div id='feb18chart' class='pie-chart'></div></tr>
-							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select newM3Date'>Select</button></td></tr>
-						        		</table>
-						        		<table class='pie-graph-container'>
-							        		<tr><th>Wed, February 19</th></tr>
-							        		<tr><td><div id='feb19chart' class='pie-chart'></div></tr>
-							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
-						        		</table>
-						        		<table class='pie-graph-container'>
-							        		<tr><th>Thurs, February 20</th></tr>
-							        		<tr><td><div id='feb20chart' class='pie-chart'></div></tr>
-							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
-						        		</table>
-						        		<table class='pie-graph-container'>
-							        		<tr><th>Fri, February 21</th></tr>
-							        		<tr><td><div id='feb21chart' class='pie-chart'></div></tr>
-							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
-						        		</table>
-						        		<table class='pie-graph-container'>
-							        		<tr><th>Sat, February 22</th></tr>
-							        		<tr><td><div id='feb22chart' class='pie-chart'></div></tr>
-							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
-						        		</table>
-						      	    </div>
+						        	<img src="./images/444graphM3.JPG" alt="info_text1" width = "990px" height = "400px" usemap ="#graphmap"> <!-- TODO -->
+									<map name="graphmap">
+									 <area shape="rect" coords="110,20,150,400" alt="Sunday" href="PV1_Exams-Sunday.html">
+									 <area shape="rect" coords="240,20,280,400" alt="Monday" href="PV1_Exams-Monday.html">
+									 <area shape="rect" coords="370,20,410,400" alt="Tuesday" href="PV1_Exams-Tuesday.html">
+									 <area shape="rect" coords="500,20,540,400" alt="Wednesday" href="PV1_Exams-Wednesday.html">
+									 <area shape="rect" coords="632,20,672,400" alt="Thursday" href="PV1_Exams-Thursday.html">
+									 <area shape="rect" coords="762,20,802,400" alt="Friday" href="PV1_Exams-Friday.html">
+									 <area shape="rect" coords="894,20,934,400" alt="Saturday" href="PV1_Exams-Saturday.html">
+									</map>  
+									<table style="width:100%" align="center">
+									<tr>
+									<td><font color="white">...</font></td>
+									<td><form action="#"><input type="submit" value="&larr;" onclick="alert('Go to the week before')"></form></td> 
+									<td><font color="white">..</font></td>
+									<td><form action="#"><input type="submit" value="Feb 16" onclick="alert('Changed Date of Midterm 3 to Feb 16')"></form></td> <!-- TODO -->
+									<td><font color="white">..</font></td>
+									<td><form action="#"><input type="submit" value="Feb 17" onclick="alert('Changed Date of Midterm 3 to Feb 17')"></form></td> <!-- TODO -->
+									<td><font color="white">....</font></td> 
+									<td><form class="newM3Date"><input type="submit" value="Feb 18"></form></td> <!-- TODO -->
+									<td><font color="white">...</font></td>
+									<td><form action="#"><input type="submit" value="Feb 19" onclick="alert('Changed Date of Midterm 3 to Feb 19')"></form></td> <!-- TODO -->
+									<td><font color="white">..</font></td>
+									<td><form action="#"><input type="submit" value="Feb 20" onclick="alert('Changed Date of Midterm 3 to Feb 20')"></form></td> <!-- TODO -->
+									<td><font color="white">...</font></td>
+									<td><form action="#"><input type="submit" value="Feb 21" onclick="alert('Changed Date of Midterm 3 to Feb 21')"></form></td> <!-- TODO -->
+									<td><font color="white">..</font></td>
+									<td><form action="#"><input type="submit" value="Feb 22" onclick="alert('Changed Date of Midterm 3 to Feb 22')"></form></td> <!-- TODO -->
+									<td><form action="#"><input type="submit" value="&rarr;" onclick="alert('Go to the next week')"></form></td>
+									  </tr>
+									  <tr>
+									<td><font color="white">.</font></td>
+									 <td><font color="white">.</font></td>
+									</tr>
+									</table>
 						      	    <table class='week-prev-next'>
 						      	    	<tr>
 						      	    		<td><button class='btn btn-default'>Prev</button><button class='btn btn-default'>Week</button></td>
@@ -380,58 +333,42 @@
 						    </div>
 					    	<div id="collapseFour" class="panel-collapse collapse">
 						        <div class="panel-body">
-						        	<table>
-						        		<tr>
-						        			<td><div class='legend-conflicts'>% of class with conflicts</div></td>
-						        			<td><div class='legend-noconflicts'>% of class with no conflicts</div></td>
-						        		</tr>
-						        	</table>
-						        	<div class='date-chooser'>
-
-						        		<table class='pie-graph-container'>
-							        		<tr><th>Sun, March 2</th></tr>
-							        		<tr><td><div id='mar2chart' class='pie-chart'></div></tr>
-							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
-						        		</table>
-						        		<table class='pie-graph-container'>
-							        		<tr><th>Mon, March 3</th></tr>
-							        		<tr><td><div id='mar3chart' class='pie-chart'></div></tr>
-							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
-						        		</table>
-						        		<table class='pie-graph-container'>
-							        		<tr><th>Tues, March 4</th></tr>
-							        		<tr><td><div id='mar4chart' class='pie-chart'></div></tr>
-							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
-						        		</table>
-						        		<table class='pie-graph-container'>
-							        		<tr><th>Wed, March 5</th></tr>
-							        		<tr><td><div id='mar5chart' class='pie-chart'></div></tr>
-							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
-						        		</table>
-						        		<table class='pie-graph-container'>
-							        		<tr><th>Thurs, March 6</th></tr>
-							        		<tr><td><div id='mar6chart' class='pie-chart'></div></tr>
-							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select newM4Date'>Select</button></td></tr>
-						        		</table>
-						        		<table class='pie-graph-container'>
-							        		<tr><th>Fri, March 7</th></tr>
-							        		<tr><td><div id='mar7chart' class='pie-chart'></div></tr>
-							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
-						        		</table>
-						        		<table class='pie-graph-container'>
-							        		<tr><th>Sat, March 8</th></tr>
-							        		<tr><td><div id='mar8chart' class='pie-chart'></div></tr>
-							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
-						        		</table>
-						        		
-						      	    </div>
+						        	
+						      	    <img src="./images/444graphM4.JPG" alt="info_text1" width = "990px" height = "400px" usemap ="#graphmap"> <!-- TODO -->
+									<map name="graphmap">
+									 <area shape="rect" coords="110,20,150,400" alt="Sunday" href="PV1_Exams-Sunday.html">
+									 <area shape="rect" coords="240,20,280,400" alt="Monday" href="PV1_Exams-Monday.html">
+									 <area shape="rect" coords="370,20,410,400" alt="Tuesday" href="PV1_Exams-Tuesday.html">
+									 <area shape="rect" coords="500,20,540,400" alt="Wednesday" href="PV1_Exams-Wednesday.html">
+									 <area shape="rect" coords="632,20,672,400" alt="Thursday" href="PV1_Exams-Thursday.html">
+									 <area shape="rect" coords="762,20,802,400" alt="Friday" href="PV1_Exams-Friday.html">
+									 <area shape="rect" coords="894,20,934,400" alt="Saturday" href="PV1_Exams-Saturday.html">
+									</map>  
+									<table style="width:100%" align="center">
+									<tr>
+									<td><font color="white">...</font></td>
+									<td><form action="#"><input type="submit" value="&larr;" onclick="alert('Go to the week before')"></form></td> 
+									<td><font color="white">..</font></td>
+									<td><form action="#"><input type="submit" value="Mar 2" onclick="alert('Changed Date of Midterm 4 to Mar 2')"></form></td> <!-- TODO -->
+									<td><font color="white">..</font></td>
+									<td><form action="#"><input type="submit" value="Mar 3" onclick="alert('Changed Date of Midterm 4 to Mar 3')"></form></td> <!-- TODO -->
+									<td><font color="white">....</font></td> 
+									<td><form action="#"><input type="submit" value="Mar 4" onclick="alert('Changed Date of Midterm 4 to Mar 4')"></form></td> <!-- TODO -->
+									<td><font color="white">...</font></td>
+									<td><form action="#"><input type="submit" value="Mar 5" onclick="alert('Changed Date of Midterm 4 to Mar 5')"></form></td> <!-- TODO -->
+									<td><font color="white">..</font></td>
+									<td><form class='newM4Date'><input type="submit" value="Mar 6"></form></td> <!-- TODO -->
+									<td><font color="white">...</font></td>
+									<td><form action="#"><input type="submit" value="Mar 7" onclick="alert('Changed Date of Midterm 4 to Mar 7')"></form></td> <!-- TODO -->
+									<td><font color="white">..</font></td>
+									<td><form action="#"><input type="submit" value="Mar 8" onclick="alert('Changed Date of Midterm 4 to Mar 8')"></form></td> <!-- TODO -->
+									<td><form action="#"><input type="submit" value="&rarr;" onclick="alert('Go to the next week')"></form></td>
+									  </tr>
+									  <tr>
+									<td><font color="white">.</font></td>
+									 <td><font color="white">.</font></td>
+									</tr>
+									</table>
 						      	    <table class='week-prev-next'>
 						      	    	<tr>
 						      	    		<td><button class='btn btn-default'>Prev</button><button class='btn btn-default'>Next</button></td>
