@@ -7,9 +7,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professor Landing Page</title>
 	   <link rel="stylesheet" href="css/profView.css">
-	   <link type='text/css' rel='StyleSheet' href='design_b.css'>
-	   <link type='text/css' rel='StyleSheet' href='http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.css'>
-	      	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	   <link type='text/css' rel='StyleSheet' href='design_b.css'><!--  COPY ME -->
+	   <link type='text/css' rel='StyleSheet' href='http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.css'> <!--  COPY ME -->
+	      	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 	<script src="js/bootstrap.js" type="text/javascript"></script>
 	<script src="js/app.js" type="text/javascript"></script>
@@ -18,10 +18,10 @@
 	<script src="js/screenswitch.js" type="text/javascript"></script>
     <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
 	<script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
-	<script type='text/javascript' src='design_b.js'></script>
-	<script src="raphael.js" type="text/javascript"></script>
-  	<script src="elycharts.js" type="text/javascript"></script>
-  	<script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.min.js'></script>
+	<script type='text/javascript' src='design_b.js'></script> <!--  COPY ME -->
+	<script src="raphael.js" type="text/javascript"></script> <!--  COPY ME -->
+  	<script src="elycharts.js" type="text/javascript"></script> <!--  COPY ME -->
+  	<script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.min.js'></script> <!--  COPY ME -->
 	
 <script type="text/javascript">
 
@@ -76,13 +76,12 @@ $(document).ready(function() {
           </ul>
         </div>
 		
-			   <div id = "Page_content" style="float:left; width:89%; height:900px;">
+			   <div id = "Page_content" style="float:left; width:89%; height:100%;">
 			   <P><h2><b><u>Midterm 1</b></u></h2></P> 
 <!--    <div class="deck-screen-left">
 						<canvas id="canvas" height="200" width="400"></canvas>
 				<br>
-			</div>
-</div> -->
+			</div>-->
 <div id="mytables">
 <table style="width:100%" align="center">
 <tr>
@@ -106,7 +105,9 @@ $(document).ready(function() {
 </tr>
 </table>
 </div>
-<table>
+<!--  COPY ME -->
+<font size="3">
+	<table>
 						        		<tr>
 						        			<td><div class='legend-conflicts'>% of class with conflicts</div></td>
 						        			<td><div class='legend-noconflicts'>% of class with no conflicts</div></td>
@@ -114,55 +115,59 @@ $(document).ready(function() {
 						        	</table>
 						        	<div class='date-chooser'>
 
+						        		
 						        		<table class='pie-graph-container'>
-							        		<tr><th>Sun, February 16</th></tr>
-							        		<tr><td><div id='feb16chart' class='pie-chart'></div></tr>
+							        		<tr><th>Sun, January 19</th></tr>
+							        		<tr><td><div id='jan19chart' class='pie-chart'></div></tr>
 							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+							        	<tr><td><a class='btn btn-success select' href="#">Select</a></td></tr>
 						        		</table>
 						        		<table class='pie-graph-container'>
-							        		<tr><th>Mon, February 17</th></tr>
-							        		<tr><td><div id='feb17chart' class='pie-chart'></div></tr>
+							        		<tr><th>Mon, January 20</th></tr>
+							        		<tr><td><div id='jan20chart' class='pie-chart'></div></tr>
 							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+							        	<tr><td><a class='btn btn-success select' href="#">Select</a></td></tr>
 						        		</table>
 						        		<table class='pie-graph-container'>
-							        		<tr><th>Tues, February 18</th></tr>
-							        		<tr><td><div id='feb18chart' class='pie-chart'></div></tr>
+							        		<tr><th>Tues, January 21</th></tr>
+							        		<tr><td><div id='jan21chart' class='pie-chart'></div></tr>
 							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select newM3Date'>Select</button></td></tr>
+							        	<tr><td><a class='btn btn-success select' href="#">Select</a></td></tr>
 						        		</table>
 						        		<table class='pie-graph-container'>
-							        		<tr><th>Wed, February 19</th></tr>
-							        		<tr><td><div id='feb19chart' class='pie-chart'></div></tr>
+							        		<tr><th>Wed, January 22</th></tr>
+							        		<tr><td><div id='jan22chart' class='pie-chart'></div></tr>
 							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+							        		<tr><td><a class='btn btn-success select' href="PV1_Exams-Midterm1-changedto22.html">Select</a></td></tr>
 						        		</table>
 						        		<table class='pie-graph-container'>
-							        		<tr><th>Thurs, February 20</th></tr>
-							        		<tr><td><div id='feb20chart' class='pie-chart'></div></tr>
+							        		<tr><th>Thurs, January 23</th></tr>
+							        		<tr><td><div id='jan23chart' class='pie-chart'></div></tr>
 							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+							        		<tr><td><a class='btn btn-success select' href="#">Select</a></td></tr>
 						        		</table>
 						        		<table class='pie-graph-container'>
-							        		<tr><th>Fri, February 21</th></tr>
-							        		<tr><td><div id='feb21chart' class='pie-chart'></div></tr>
+							        		<tr><th>Fri, January 24</th></tr>
+							        		<tr><td><div id='jan24chart' class='pie-chart'></div></tr>
 							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+							     <tr><td><a class='btn btn-success select' href="#">Select</a></td></tr>
 						        		</table>
 						        		<table class='pie-graph-container'>
-							        		<tr><th>Sat, February 22</th></tr>
-							        		<tr><td><div id='feb22chart' class='pie-chart'></div></tr>
+							        		<tr><th>Sat, January 25</th></tr>
+							        		<tr><td><div id='jan25chart' class='pie-chart'></div></tr>
 							        		<tr><td><button class='btn btn-primary details'>Details</button></td></tr>
-							        		<tr><td><button class='btn btn-success select'>Select</button></td></tr>
+							        	<tr><td><a class='btn btn-success select' href="#">Select</a></td></tr>
 						        		</table>
 						      	    </div>
 						      	    <table class='week-prev-next'>
 						      	    	<tr>
-						      	    		<td><button class='btn btn-default'>Prev</button><button class='btn btn-default'>Week</button></td>
+						      	    		<td><button class='btn btn-default'>Prev</button><button class='btn btn-default'>Next</button></td>
 						      	    	</tr>
-						      	    </table>
-
+										</table>
+</font>
+</div> 
+</div> 
+<!--  STOP HERE -->
 <div id="footer_2" style="background-color:#000000;clear:both;text-align:center;"><font color="white">
 Copyright TeamMinions.com</font></div>
 </body>
