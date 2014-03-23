@@ -972,6 +972,8 @@ $(document).ready(function() {
 	});
 })
 
+
+
 /*adding a new midterm*/
 $(document).ready(function() {
 	$('#datepicker').datepicker();
@@ -980,6 +982,13 @@ $(document).ready(function() {
 	})
 })
 
+/*Choosing dates other than the predetermined date*/
+$(document).ready(function() {
+	$('.wrongDate').click(function(){
+		$('.alert-modal-body').empty().append("There seems to be a date with less conflicts. Please try again.");
+		$('#alertModal').modal('toggle');
+	});
+});
 /*
 $(document).ready(function() {
 	//$('#M2').hide();
